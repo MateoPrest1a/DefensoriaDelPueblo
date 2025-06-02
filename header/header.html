@@ -1,69 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DFP</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Defensoría - SPA</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
 
-    <style>
-        .div-main-header{
-            margin: auto;
-            border: 50%;
-            background-color: black;
-            align-items: center;
-            height: fit-content;
-        }        
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #6FB1FC; /* Azul celeste atlántico */
+    }
 
-        a{
-            color: white;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: x-large;
-            font: bold;
-            display: inline-block;
-            padding: 10px;
-            text-decoration: none;
-        }
+    .navbar-logo img {
+      height: 100px;
+    }
 
-        a:hover{
-            cursor: pointer;
-        }
+    .navbar-menu {
+      display: flex;
+      gap: 20px;
+      position: relative;
+    }
 
-        #main-header-logo{
-            margin-right: 50px;
-            font-size: xx-large;
-        }
+    .navbar-menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+      padding: 15px 10px;
+      display: inline-block;
+    }
 
-        #main-header-link-wpp{
-            margin-left: 300px;
-            
-        }
+    .navbar-menu a:hover {
+      color: #ccc;
+    }
 
-        #main-header-link-wpp:hover{
-            cursor: pointer;
-            background-color: green;
-        }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
 
-        #main-header-link-wpp-img{
-            width: 50px;
-            height: auto;
-        }
-    </style>
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #6FB1FC;
+      min-width: 150px;
+      top: 100%;
+      left: 0;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      flex-direction: column;
+    }
+
+    .dropdown-content a {
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      display: block;
+      font-weight: normal;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #5599E6;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: flex;
+    }
+  </style>
 </head>
-   
 <body>
-<div class="div-main-header">
-<header class="main-header">
-    <nav>
-        <a href="#" id="main-header-logo">Logo</a>
+
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <img src="logo_viejo.png" alt="Logo Defensoría" />
+    </div>
+    <div class="navbar-menu">
+      <div class="dropdown">
         <a href="#">Institucional</a>
-        <a href="#">Que Hacemos</a>
-        <a href="#">Prensa</a>
-        <a href="#">Normativa</a>
-        <a href="#">Links</a>
-        <a href="#">Contactenos</a>
-        <a href="#" id="main-header-link-wpp"><img src="img/whatsapp.png" id="main-header-link-wpp-img"></img></a>
-    </nav>
-</header>
-</div>    
+        <div class="dropdown-content">
+          <a href="#">¿Qué hacemos?</a>
+          <a href="#">Autoridades</a>
+          <a href="#">Historia</a>
+        </div>
+      </div>
+      <a href="#">Prensa</a>
+      <a href="#">Normativa</a>
+      <a href="#">Links</a>
+      <a href="#">Contáctenos</a>
+    </div>
+  </nav>
+
 </body>
 </html>

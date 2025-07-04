@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Defensoría - SPA</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #6FB1FC;
+    }
+
+    .navbar-logo img {
+      height: 100px;
+    }
+
+    .navbar-menu {
+      display: flex;
+      gap: 20px;
+      position: relative;
+    }
+
+    .navbar-menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+      padding: 15px 10px;
+      display: inline-block;
+    }
+
+    .navbar-menu a:hover {
+      color: #ccc;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #6FB1FC;
+      min-width: 160px;
+      top: 100%;
+      left: 0;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      flex-direction: column;
+    }
+
+    .dropdown-content a {
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      display: block;
+      font-weight: normal;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #5599E6;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <img src="logo_viejo.png" alt="Logo Defensoría" />
+    </div>
+    <div class="navbar-menu">
+
+      <!-- Institucional -->
+      <div class="dropdown">
+        <a href="#">Institucional</a>
+        <div class="dropdown-content">
+          <a href="#">¿Qué hacemos?</a>
+          <a href="#">Autoridades</a>
+        </div>
+      </div>
+
+      <!-- Prensa -->
+      <div class="dropdown">
+        <a href="#">Prensa</a>
+        <div class="dropdown-content">
+          <a href="#">Noticias</a>
+          <a href="#">Memorias</a>
+          <a href="#">Archivos por año</a>
+        </div>
+      </div>
+
+      <!-- Normativa -->
+      <div class="dropdown">
+        <a href="#">Normativa</a>
+        <div class="dropdown-content">
+          <a href="#">Ordenanzas</a>
+          <a href="#">Reglamentos</a>
+          <a href="#">Resoluciones</a>
+        </div>
+      </div>
+
+      <a href="#">Links</a>
+      
+        <!-- Contactenos-->
+      <div class="dropdown">
+        <a href="#">Contáctenos</a>
+        <div class="dropdown-content">
+          <a href="#">FAQ</a>
+          <a href="#">Formulario de Contacto</a>
+        </div>
+      </div>
+
+
+    </div>
+  </nav>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+<?php 
+    $breadcrumbNames = [
+    //IR ACTUALIZANDO A MEDIDA QUE VAMOS CREANDO LAS PAGINAS
+    'Institucional' => 'Institucional',
+    //'QueHacemos' => '¿Qué Hacemos?',
+    'queHacemos.php' => '¿Qué Hacemos?',
+    'contactenos.php','Contactenos',
+    'ordenanzas.php','Ordenanzas',
+    'index.php' => 'Inicio',
+    'DefensoriaDelPueblov3' => null,
+];
+?>

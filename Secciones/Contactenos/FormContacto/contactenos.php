@@ -21,22 +21,22 @@
                 <h1 class="display-1 py-4 titulo-display-1">Contactenos</h1>
                 <div class="card">
                     <div class="card-body">                        
-                        <form action="POST">
+                        <form action="confirmacion_mail.php" method="post">
                             <div class="mb-3 position-relative">
                                 <label for="name" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" id="name">
+                                <input type="text" class="form-control" id="name" name="name">
                             </div>
                             <div class="mb-3 position-relative">
                                 <label for="surename" class="form-label">Apellido</label>
-                                <input type="text" class="form-control" id="surename">
+                                <input type="text" class="form-control" id="surename" name="surename">
                             </div>
                             <div class="mb-3 position-relative">
                                 <label for="email" class="form-label">Correo Electronico</label>
-                                <input type="email" class="form-control" id="email" placeholder="email@ejemplo.com">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="email@ejemplo.com">
                             </div>
                             <div class="mb-3 position-relative">
                                 <label for="comentario" class="form-label">Mensaje</label>
-                                <textarea class="form-control" id="comentario" rows="3" placeholder="Ingrese su mensaje aqui..."></textarea>
+                                <textarea class="form-control" id="comentario" rows="3" placeholder="Ingrese su mensaje aqui..." name="comentario"></textarea>
                             </div>
                             <div class="mb-3 position-relative">
                                 <button type="submit" class="form-control button-envio">Enviar</button>

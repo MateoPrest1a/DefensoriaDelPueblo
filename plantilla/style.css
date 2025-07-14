@@ -177,3 +177,29 @@ footer {
     align-content: center;
     margin: auto;
 }
+
+/* Para la pestaña del inicio*/
+.map-container img {
+  transition: transform 0.3s ease;
+}
+
+.map-container img:hover {
+  transform: scale(1.02);
+}
+.titulo-animado {
+  animation: fadeInDown 1s ease-out;
+  font-size: 4rem;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+

@@ -4,6 +4,7 @@
     'Institucional' => 'Institucional',
     //'QueHacemos' => '¿Qué Hacemos?',
     'queHacemos.php' => '¿Qué Hacemos?',
+    'autoridades.php' => 'Autoridades',
     'contactenos.php','Contactenos',
     'ordenanzas.php','Ordenanzas',
     'index.php' => 'Inicio',

@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Defensoría</title>
+    <title><?=TITULO?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="<?= BASE_URL ?>plantilla/style.css">
@@ -26,8 +26,8 @@
             <div class="dropdown">
               <a href="#">Institucional</a>
               <div class="dropdown-content">
-                <a href="/DefensoriaDelPueblov3/Secciones/Institucional/QueHacemos/queHacemos.php">¿Qué hacemos?</a>
-                <a href="/DefensoriaDelPueblov3/Secciones/Institucional/Autoridades/autoridades.php">Autoridades</a>
+                <a href="<?=BASE_URL?>/Secciones/Institucional/QueHacemos/queHacemos.php">¿Qué hacemos?</a>
+                <a href="<?=BASE_URL?>/Secciones/Institucional/Autoridades/autoridades.php">Autoridades</a>
                 <a href="#">Historia</a>
               </div>
             </div>
@@ -46,7 +46,7 @@
             <div class="dropdown">
               <a href="#">Normativa</a>
               <div class="dropdown-content">
-                <a href="/DefensoriaDelPueblov3/Secciones/Normativa/Ordenanzas/ordenanzas.php">Ordenanzas</a>
+                <a href="<?=BASE_URL?>/Secciones/Normativa/Ordenanzas/ordenanzas.php">Ordenanzas</a>
                 <a href="#">Reglamentos</a>
                 <a href="#">Resoluciones</a>
               </div>
@@ -59,7 +59,7 @@
               <a href="#">Contáctenos</a>
               <div class="dropdown-content">
                 <a href="#">FAQ</a>
-                <a href="/DefensoriaDelPueblov3/Secciones/Contactenos/FormContacto/contactenos.php">Formulario de Contacto</a>
+                <a href="<?=BASE_URL?>/Secciones/Contactenos/FormContacto/contactenos.php">Formulario de Contacto</a>
               </div>
               </div>
           </div>

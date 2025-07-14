@@ -1,5 +1,5 @@
 <?php
-function breadcrumbPersonalizado($diccionario, $baseUrl = '/DefensoriaDelPueblov3/') {
+function breadcrumbPersonalizado($diccionario, $baseUrl = '/DefensoriaDelPueblo/') {
     $path = array_filter(explode('/', parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)));
     $breadcrumb = '<nav aria-label="breadcrumb"><ol class="breadcrumb mb-0">';
     $build = $baseUrl;

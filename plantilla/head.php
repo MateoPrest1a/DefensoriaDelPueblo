@@ -48,7 +48,7 @@
               <div class="dropdown-content">
                 <a href="<?=BASE_URL?>/Secciones/Normativa/Ordenanzas/ordenanzas.php">Ordenanzas</a>
                 <a href="#">Reglamentos</a>
-                <a href="#">Resoluciones</a>
+                <a href="<?=BASE_URL?>/Secciones/Normativa/Ordenanzas/resoluciones.php">Resoluciones</a>
               </div>
             </div>
 

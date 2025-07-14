@@ -7,6 +7,7 @@
     'autoridades.php' => 'Autoridades',
     'contactenos.php','Contactenos',
     'ordenanzas.php','Ordenanzas',
+    'resoluciones.php','Resoluciones',
     'index.php' => 'Inicio',
     'DefensoriaDelPueblov3' => null,
 ];

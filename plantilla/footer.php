@@ -2,7 +2,7 @@
   <div class="row align-items-center text-center text-md-start container mx-auto py-4">
     <!-- Logo -->
     <div class="col-md-4 mb-4 mb-md-0">
-      <img src="/DefensoriaDelPuebloV3/plantilla/logo_viejo.png" alt="Logo Defensoría" style="height: 60px;" class="mb-3">
+      <img src="/plantilla/logo_viejo.png" style="height: 60px;" class="mb-3">
       <h5 class="fw-bold">Defensoría del Pueblo</h5>
       <p class="mb-0">Partido de General Pueyrredon</p>
     </div>
@@ -18,8 +18,9 @@
     <!-- Redes -->
     <div class="col-md-4">
       <h6 class="fw-semibold mb-2">Seguinos</h6>
-      <a href="#" class="text-white fs-4 me-3 social-icon"><i class="bi bi-facebook"></i></a>
-      <a href="#" class="text-white fs-4 me-3 social-icon"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.facebook.com/defensoriadelpueblomgp/?locale=es_LA" class="text-white fs-4 me-3 social-icon"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.instagram.com/defensoriamgp/" class="text-white fs-4 me-3 social-icon"><i class="bi bi-instagram"></i></a>
+      <a href="https://wa.me/5492234996502" class="text-white fs-4 me-3 social-icon"><i class="bi bi-whatsapp"></i></a>
     </div>
 
     <hr class="border-top border-secondary mt-4">

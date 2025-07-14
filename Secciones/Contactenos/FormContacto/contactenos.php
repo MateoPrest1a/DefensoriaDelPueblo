@@ -40,10 +40,12 @@
                             </div>
                             <div class="mb-3 position-relative">
                                 <button type="submit" class="form-control button-envio">Enviar</button>
+
                                 <!-- <button class="g-recaptcha" 
                                     data-sitekey="reCAPTCHA_site_key" 
                                     data-callback='onSubmit' 
                                     data-action='submit'>Submit</button> -->
+
                             </div>
                         </form>
                     </div>
@@ -51,7 +53,7 @@
             </div>
         </div>
     </div>
-
+   <?php //<hr class="my-1" style="background-color: black"> ?>
 <?php include('../../../plantilla/footer.php'); ?>
 
 </body>

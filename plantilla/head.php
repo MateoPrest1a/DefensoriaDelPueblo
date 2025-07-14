@@ -18,7 +18,7 @@
       <div class="col">
         <nav class="navbar">
           <div class="navbar-logo">
-            <a href="<?=BASE_URL?>Secciones/Inicio/index.php"><img src="<?=BASE_URL?>plantilla/logo_viejo.png" alt="Logo Defensoría" /></a>
+            <a href="<?=BASE_URL?>Secciones/Inicio/principal.php"><img src="<?=BASE_URL?>plantilla/logo_viejo.png" alt="Logo Defensoría" /></a>
           </div>
           <div class="navbar-menu">
 

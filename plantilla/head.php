@@ -1,5 +1,15 @@
 <?php 
   include_once __DIR__ . '/../parametros.php';
+
+  $archivo = archivo_actual();
+
+  //Guardo en una variable para luego usarla sin necesidad de abrir un bloque de php
+  //Solo con <?=$archivo?< se ejecuta 
+  if($archivo == "inicioSesion.php" || $archivo == "backoffice.php"){
+    $botonSesion = '<a href="' . BASE_URL . 'index.php" class="btn btn-outline-danger btn-sm">Cerrar sesión</a>';
+  } else {
+    $botonSesion = '<a href="' . BASE_URL . 'BackOffice/Login/inicioSesion.php" class="btn btn-outline-primary btn-sm">Iniciar sesión</a>';
+  }
 ?>
 
 <!DOCTYPE html>
@@ -57,12 +67,22 @@
               <!-- Contactenos -->
               <div class = "dropdown">
               <a href="#">Contáctenos</a>
-              <div class="dropdown-content">
+              <div class="dropdown-content">                
                 <a href="#">FAQ</a>
                 <a href="<?=BASE_URL?>/Secciones/Contactenos/FormContacto/contactenos.php">Formulario de Contacto</a>
               </div>
               </div>
           </div>
+            
+          <div class="usuario-wrapper">
+              <div class="icono-sesion">
+                <i class="bi bi-person-circle fs-4"></i>
+                  <div class="boton-hover">
+                    <?=$botonSesion?>
+                  </div>
+              </div>
+          </div>
+
         </nav>
       </div>
     </div>

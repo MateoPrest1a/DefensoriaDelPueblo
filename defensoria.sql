@@ -27,6 +27,9 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `auditorias`
 --
 
+CREATE DATABASE IF NOT EXISTS defensoria; 
+USE defensoria; 
+
 CREATE TABLE `auditorias` (
   `auditoria_id` int(10) UNSIGNED NOT NULL,
   `usuario_id` tinyint(3) UNSIGNED NOT NULL,

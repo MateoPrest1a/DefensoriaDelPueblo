@@ -203,4 +203,52 @@ footer {
   }
 }
 
+.usuario-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.icono-sesion {
+  position: relative;
+  display: inline-block;
+}
+
+.bi-person-circle {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.boton-hover {
+  position: absolute;
+  top: 50%;
+  left: 110%;
+  transform: translateY(-50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.icono-sesion:hover .boton-hover,
+.icono-sesion .boton-hover:hover {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.bi-arrow-left{
+    margin: 10px;
+}
+
+.flecha-retorno {
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 1.25rem;
+  margin-left: 10px;
+}
+
+.flecha-retorno:hover {
+  color: red;
+}
 

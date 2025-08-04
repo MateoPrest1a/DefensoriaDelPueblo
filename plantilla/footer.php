@@ -2,7 +2,7 @@
   <div class="row align-items-center text-center text-md-start container mx-auto py-4">
     <!-- Logo -->
     <div class="col-md-4 mb-4 mb-md-0">
-      <img src="/plantilla/logo_viejo.png" style="height: 60px;" class="mb-3">
+      <img src="<?=BASE_URL?>plantilla/logo_viejo.png" style="height: 60px;" class="mb-3">
       <h5 class="fw-bold">Defensoría del Pueblo</h5>
       <p class="mb-0">Partido de General Pueyrredon</p>
     </div>

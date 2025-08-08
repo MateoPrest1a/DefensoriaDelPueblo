@@ -252,3 +252,18 @@ footer {
   color: red;
 }
 
+.btn-clean {
+        border: none;
+        background-color: transparent;
+        color: #343a40;
+        text-align: left;
+        width: 100%;
+        padding: 10px 15px;
+        transition: background-color 0.3s ease;
+        
+    }
+
+    .btn-clean:hover {
+        background-color: #dee2e6;
+        color: #000;
+    }

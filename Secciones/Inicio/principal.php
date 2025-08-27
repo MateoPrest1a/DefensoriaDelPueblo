@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <?php include('../../plantilla/head.php'); ?>
+<div class="franja-institucional">
+  <img src="plantilla/imgs/logo_viejo.png" alt="Logo Defensoría" class="logo-banner">
+  <p class="slogan">Municipalidad de General Pueyrredon</p>
+</div>
 
 <body>
   <section class="hero">
@@ -31,8 +35,10 @@
     <a href="https://www.google.com.ar/maps/place/Municipalidad+de+General+Pueyrredon/@-37.9976633,-57.5516251,16z/data=!3m1!4b1!4m6!3m5!1s0x9584dc03bb58eb2b:0xfc58db7e5aa0879f!8m2!3d-37.9976663!4d-57.5498044!16s%2Fg%2F1tdb0w9g?hl=es&entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
       <img src="./images/mapa.png" alt="Ubicación Municipalidad" class="img-fluid" style="max-height: 400px; object-fit: cover;">
     </a>
-   
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </div>
+  <br>
+  <?php include('../../plantilla/footer.php'); ?>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-<?php include('../../plantilla/footer.php'); ?>
+
 </html>

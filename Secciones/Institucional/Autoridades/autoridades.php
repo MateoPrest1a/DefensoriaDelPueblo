@@ -1,19 +1,22 @@
-<?php include('../../../plantilla/head.php'); 
-    include_once __DIR__ . '/../../../breadcrumbConfig.php';
-    include_once __DIR__ . '/../../../breadcrumb.php';
-    echo breadcrumbPersonalizado($breadcrumbNames);
-?>
-
-<!-- Contenido principal -->
-<main class="container my-5">
-    <h1 class="mb-4 text-center">Autoridades</h1>
-
-    <div class="card shadow-sm">
-        <div class="card-body">
-            <h5 class="card-title">Defensor del Pueblo</h5>
-            <p class="card-text">Abog. Marcelo Pablo Lacedonia</p>
+<?php include('../../../plantilla/head.php'); ?>
+<?php include_once __DIR__ . '/../../../breadcrumbConfig.php'; ?>
+<?php include_once __DIR__ . '/../../../breadcrumb.php'; ?>
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <br>
+                <h1 class="text-center">Autoridades</h1>
+                <br>
+                <div class="card mx-auto">
+                    <div class="card-body">
+                    <h5>Defensor del Pueblo</h5>
+                    <p> Abog. Marcelo Pablo Lacedonia</p>
+                    <img src="../../../plantilla/imgs/defensor.jpg" alt="Abog. Marcelo Pablo Lacedonia">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </main>
-
 <?php include('../../../plantilla/footer.php'); ?>

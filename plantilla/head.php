@@ -35,7 +35,6 @@ if ($archivo == "inicioSesion.php" || $archivo == "backoffice.php") {
         <div class="dropdown-content">
           <a href="<?= BASE_URL ?>Secciones/Institucional/QueHacemos/queHacemos.php">¿Qué hacemos?</a>
           <a href="<?= BASE_URL ?>Secciones/Institucional/Autoridades/autoridades.php">Autoridades</a>
-          <a href="<?= BASE_URL ?>Secciones/Institucional/Historia/historia.php">Historia</a>
         </div>
       </div>
 
@@ -45,7 +44,6 @@ if ($archivo == "inicioSesion.php" || $archivo == "backoffice.php") {
         <div class="dropdown-content">
           <a href="<?= BASE_URL ?>Secciones/Prensa/Noticias/noticias.php">Noticias</a>
           <a href="<?= BASE_URL ?>Secciones/Prensa/Memorias/memorias.php">Memorias</a>
-          <a href="<?= BASE_URL ?>Secciones/Prensa/Archivos/archivos.php">Archivos por años</a>
         </div>
       </div>
 
@@ -54,7 +52,7 @@ if ($archivo == "inicioSesion.php" || $archivo == "backoffice.php") {
         <a href="#">Normativa</a>
         <div class="dropdown-content">
           <a href="<?= BASE_URL ?>Secciones/Normativa/Ordenanzas/ordenanzas.php">Ordenanzas</a>
-          <a href="<?= BASE_URL ?>Secciones/Normativa/Reglamentos/reglamentos.php">Reglamentos</a>
+          <a href="<?= BASE_URL ?>Secciones/Normativa/Reglamentos/reglamentos.php">Reglamento Interno</a>
           <a href="<?= BASE_URL ?>Secciones/Normativa/Resoluciones/resoluciones.php">Resoluciones</a>
         </div>
       </div>

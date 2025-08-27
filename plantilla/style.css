@@ -48,7 +48,6 @@ main {
   color: white;
   padding: 80px 20px;
   text-align: center;
-  margin-top: 40px;
 }
 
 .hero h1 {
@@ -58,8 +57,48 @@ main {
 
 .hero p {
   font-size: 1.2rem;
-  max-width: 700px;
-  margin: auto;
+  line-height: 1.8;
+  text-align: justify;
+  margin: 0;
+  max-width: none;
+}
+.hero-defensoria {
+  position: relative;
+  background-image: url('../../DefensoriaDelPueblo//Secciones/Inicio/images/portada.jpg'); /* ajustá la ruta si es necesario */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.hero-defensoria::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); /* oscurece la imagen para que el texto se lea bien */
+  z-index: 1;
+}
+
+.contenido-hero {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 40px;
+  text-align: center;
+}
+
+.contenido-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.contenido-hero p {
+  font-size: 1.2rem;
+  line-height: 1.8;
 }
 
 /* CARDS */
@@ -134,7 +173,6 @@ footer a {
   display: block;
 }
 
-/* SECCIONES */
 .contenido-seccion {
   max-width: 1100px;
   margin: 60px auto;
@@ -151,3 +189,18 @@ footer a {
   word-break: keep-all;
   color: #003366;
 }
+
+.card-body p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #212529;
+  text-align: justify;
+}
+
+
+
+
+
+
+
+

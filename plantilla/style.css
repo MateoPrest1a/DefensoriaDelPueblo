@@ -130,6 +130,23 @@ main {
   text-align: justify;
 }
 
+.card-extensa{
+   max-width: 700px;
+  padding: 30px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  margin-right: auto;
+}
+
+.card-mas-larga{
+  font-size: medium;
+  text-align: justify;
+  flex: auto;
+  width: 100%;
+}
+
 /* FOOTER */
 footer {
   background-color: #003366;

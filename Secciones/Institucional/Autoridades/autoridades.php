@@ -3,7 +3,7 @@
 <?php include_once __DIR__ . '/../../../breadcrumb.php'; ?>
 <main>
     <div class="container">
-        <div class="row">
+        <div class="row py-3">
             <div class="col">
                 <br>
                 <h1 class="text-center">Autoridades</h1>

@@ -1,11 +1,24 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #F5F7FA;
-  margin: 0;
-  padding: 0;
   color: #212529;
+  
+  display: flex;            /* 🔹 convierte el body en un contenedor flex */
+  flex-direction: column;   /* 🔹 organiza verticalmente */
+  min-height: 100vh;        /* 🔹 ocupa toda la pantalla */
 }
 
+main {
+  flex: 1; /* 🔹 el main ocupa el espacio disponible */
+}
+
+/* NAVBAR */
 .navbar {
   background-color: #003366;
   padding: 15px 30px;
@@ -29,11 +42,13 @@ body {
   color: #6FB1FC;
 }
 
+/* HERO */
 .hero {
   background: linear-gradient(to right, #003366, #6FB1FC);
   color: white;
   padding: 80px 20px;
   text-align: center;
+  margin-top: 40px;
 }
 
 .hero h1 {
@@ -50,6 +65,7 @@ body {
 }
 
 
+/* CARDS */
 .card-section {
   display: flex;
   flex-wrap: wrap;
@@ -66,11 +82,18 @@ body {
   padding: 25px;
 }
 
-
 .card:hover {
   transform: translateY(-5px);
 }
 
+.card-body p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #212529;
+  text-align: justify;
+}
+
+/* FOOTER */
 footer {
   background-color: #003366;
   color: white;
@@ -83,13 +106,13 @@ footer a {
   text-decoration: none;
   margin: 0 10px;
 }
-/* Dropdown container */
+
+/* DROPDOWN */
 .dropdown {
   position: relative;
   display: inline-block;
 }
 
-/* Dropdown content */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -101,7 +124,6 @@ footer a {
   border-radius: 6px;
 }
 
-/* Links dentro del dropdown */
 .dropdown-content a {
   color: white;
   padding: 10px 20px;
@@ -110,30 +132,25 @@ footer a {
   font-weight: 500;
 }
 
-/* Hover para mostrar el dropdown */
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
+/* SECCIONES */
 .contenido-seccion {
   max-width: 1100px;
   margin: 60px auto;
   padding: 40px 30px;
 }
 
-.contenido-seccion h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  text-align: center;
-  word-break: keep-all;
-}
+.contenido-seccion h1,
 .titulo-seccion {
   font-size: 2.5rem;
   font-weight: 600;
   text-align: center;
   margin-bottom: 20px;
-  word-break: keep-all;
   line-height: 1.2;
+  word-break: keep-all;
   color: #003366;
 }
 

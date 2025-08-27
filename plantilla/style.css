@@ -48,6 +48,7 @@ main {
   color: white;
   padding: 80px 20px;
   text-align: center;
+  margin-top: 40px;
 }
 
 .hero h1 {
@@ -112,6 +113,20 @@ main {
 }
 
 .card {
+  animation-name: slidein;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  flex: 1 1 300px;
+  max-width: 350px;
+  padding: 25px;
+  transition: transform 0.5 cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.5 cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/*Efecto de levantamiento al pasar el mouse por encima*/
+.card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
   max-width: 400px;
   padding: 30px;
   background: #fff;
@@ -127,6 +142,15 @@ main {
   line-height: 1.6;
   color: #212529;
   text-align: justify;
+}
+
+.card-seccion-principal{
+  cursor: pointer;
+}
+
+.card-seccion-principal:active{
+  transform: translateY(1px) scale(0.99);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 /* FOOTER */

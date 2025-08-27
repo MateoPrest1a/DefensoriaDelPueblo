@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
 <?php include('../../plantilla/head.php'); ?>
-<div class="franja-institucional">
-  <img src="plantilla/imgs/logo_viejo.png" alt="Logo Defensoría" class="logo-banner">
-  <p class="slogan">Municipalidad de General Pueyrredon</p>
-</div>
 
 <body>
-  <section class="hero">
-    <h1>Defensoría del Pueblo</h1>
-    <p>Protegiendo tus derechos, escuchando tu voz. Conectate con nosotros para que tus inquietudes sean escuchadas.
-      Esta es la pagina web de la Defensoría del Pueblo de la Municipalidad de General Pueyrredon.
-      Por este medio trataremos de dar a conocer nuestro trabajo, las acciones que realizamos y el tratamiento dado a los temas que nos llegan.
-      Creemos en un sistema comunicacional de ida y vuelta, por lo que sumamos este medio para que se contacten con nosotros para acercarnos las inquietudes y quejas para poder analizarlas y tratarlas.
-    </p>
+  <section class="hero-defensoria">
+    <div class="contenido-hero">
+      <h1>Defensoría del Pueblo</h1>
+      <p>
+        Protegiendo tus derechos, escuchando tu voz. Conectate con nosotros para que tus inquietudes sean escuchadas.
+        Esta es la página web de la Defensoría del Pueblo de la Municipalidad de General Pueyrredon.
+        Por este medio tratamos de dar a conocer nuestro trabajo, nuestras actividades y de brindarte un canal de comunicación directo con nosotros.
+      </p>
+    </div>
   </section>
-
   <section class="card-section">
     <div class="card">
       <h3>¿Qué hacemos?</h3>

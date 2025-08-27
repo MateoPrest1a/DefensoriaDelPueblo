@@ -48,7 +48,44 @@ body {
   margin: 0;
   max-width: none;
 }
+.hero-defensoria {
+  position: relative;
+  background-image: url('../../DefensoriaDelPueblo//Secciones/Inicio/images/portada.jpg'); /* ajustá la ruta si es necesario */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
 
+.hero-defensoria::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); /* oscurece la imagen para que el texto se lea bien */
+  z-index: 1;
+}
+
+.contenido-hero {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 40px;
+  text-align: center;
+}
+
+.contenido-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.contenido-hero p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
 
 .card-section {
   display: flex;
@@ -143,23 +180,8 @@ footer a {
   color: #212529;
   text-align: justify;
 }
-.franja-institucional {
-  background-color: white;
-  padding: 20px 0;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
 
-.logo-banner {
-  max-height: 80px;
-  margin-bottom: 10px;
-}
 
-.slogan {
-  font-size: 1.1rem;
-  color: #003366;
-  font-weight: 500;
-}
 
 
 

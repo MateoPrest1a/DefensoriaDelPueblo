@@ -7,6 +7,9 @@
     define("DB","defensoria");
 
     define("TITULO","Defensoria del Pueblo");
+    define("QUEHACEMOS","../Institucional/QueHacemos/queHacemos.php");
+    define("CONTACTENOS","../Contactenos/FormContacto/contactenos.php");
+    define("NOTICIAS","../Prensa/Noticias/noticias.php");
 
     session_start();
     function archivo_actual(){

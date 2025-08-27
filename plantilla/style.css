@@ -65,23 +65,24 @@ main {
 /* CARDS */
 .card-section {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
+  align-items: center;
   padding: 60px 30px;
   max-width: 1200px;
   margin: auto;
+  min-height: 60vh; /* para que quede centrado verticalmente */
 }
 
 .card {
-  flex: 1 1 300px;
-  max-width: 350px;
-  padding: 25px;
+  max-width: 400px;
+  padding: 30px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  margin-right: auto;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-}
 
 .card-body p {
   font-size: 1.1rem;

@@ -11,7 +11,7 @@ echo breadcrumbPersonalizado($breadcrumbNames);
 
     <div class="row justify-content-center">
       <div class="col-lg-8">
-        <div class="card shadow-sm border-0">
+        <div class="card shadow-sm border-0 mx-auto">
           <div class="card-body">
             <h5 class="card-title text-uppercase fw-bold mb-3">
               Ordenanza Nº 13.663

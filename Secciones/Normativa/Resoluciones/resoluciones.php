@@ -13,7 +13,7 @@ echo breadcrumbPersonalizado($breadcrumbNames);
       <div class="col-lg-8">
 
         <!-- Resolución 1/2015 -->
-        <div class="card shadow-sm border-0 mb-4">
+        <div class="card shadow-sm border-0 mb-4 mx-auto">
           <div class="card-body">
             <h5 class="card-title text-uppercase fw-bold mb-3">Resolución 1/2015</h5>
             <p class="card-text">En el siguiente link, puede acceder a la Resolución 1/2015.</p>
@@ -24,7 +24,7 @@ echo breadcrumbPersonalizado($breadcrumbNames);
         </div>
 
         <!-- Resolución 2/2015 -->
-        <div class="card shadow-sm border-0 mb-4">
+        <div class="card shadow-sm border-0 mb-4 mx-auto">
           <div class="card-body">
             <h5 class="card-title text-uppercase fw-bold mb-3">Resolución 2/2015</h5>
             <p class="card-text">En el siguiente link, puede acceder a la Resolución 2/2015.</p>
@@ -35,7 +35,7 @@ echo breadcrumbPersonalizado($breadcrumbNames);
         </div>
 
         <!-- Resolución 3/2015 -->
-        <div class="card shadow-sm border-0 mb-4">
+        <div class="card shadow-sm border-0 mb-4 mx-auto">
           <div class="card-body">
             <h5 class="card-title text-uppercase fw-bold mb-3">Resolución 3/2015</h5>
             <p class="card-text">En el siguiente link, puede acceder a la Resolución 3/2015.</p>
@@ -46,7 +46,7 @@ echo breadcrumbPersonalizado($breadcrumbNames);
         </div>
 
         <!-- Resolución 4/2015 -->
-        <div class="card shadow-sm border-0 mb-4">
+        <div class="card shadow-sm border-0 mb-4 mx-auto">
           <div class="card-body">
             <h5 class="card-title text-uppercase fw-bold mb-3">Resolución 4/2015</h5>
             <p class="card-text">En el siguiente link, puede acceder a la Resolución 4/2015.</p>
@@ -55,18 +55,6 @@ echo breadcrumbPersonalizado($breadcrumbNames);
             </a>
           </div>
         </div>
-
-        <!-- Resolución 5/2015 -->
-        <div class="card shadow-sm border-0 mb-4">
-          <div class="card-body">
-            <h5 class="card-title text-uppercase fw-bold mb-3">Resolución 5/2015</h5>
-            <p class="card-text">En el siguiente link, puede acceder a la Resolución 5/2015.</p>
-            <a href="http://www.defensoriadelpueblo.mdp.gob.ar/wp-content/uploads/2015/06/resolucion-05-2015.pdf" class="btn btn-outline-primary" target="_blank">
-              <i class="bi bi-file-earmark-text me-2"></i> Ver Resolución Completa
-            </a>
-          </div>
-        </div>
-
       </div>
     </div>
   </div>

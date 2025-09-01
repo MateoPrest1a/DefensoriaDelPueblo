@@ -106,10 +106,13 @@ main {
 .card-section {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch; /*center sino */
   padding: 60px 30px;
   max-width: 1200px;
   margin: auto;
+
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 @keyframes slidein {
@@ -124,13 +127,15 @@ main {
 }
 
 .card {
-  max-width: 400px;
+  /*max-width: 400px;*/
+  width: 100%;
   padding: 30px;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   text-align: center;
-  margin-right: auto;
+  /*margin-right: auto;*/
+  flex: 1 1 300px; /*Cambio temporal*/
 }
 
 
@@ -163,7 +168,16 @@ main {
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   transition: box-shadow 0.3s ease;
   position: relative;
-  /*transition: transform 0.5 cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.5 cubic-bezier(0.25, 0.8, 0.25, 1);*/
+
+  /* Ajustes de Tamaño Responsive (Solo para esta clase)*/
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  min-width: 280px;    
+  max-width: 100%;     
+  box-sizing: border-box;
 }
 
 .card-seccion-principal:hover{
@@ -303,4 +317,3 @@ footer a {
   flex: auto;
   width: 100%;
 }
-

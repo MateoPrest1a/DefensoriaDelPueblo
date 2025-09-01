@@ -14,7 +14,7 @@
     </div>
   </section>
   <section class="card-section">
-    <div class="card card-seccion-principal" data-url="<?=QUEHACEMOS?>">
+    <div class="card card-seccion-principal" data-url="<?= QUEHACEMOS ?>">
       <h3>¿Qué hacemos?</h3>
       <p>Conocé nuestras funciones y cómo trabajamos para defender tus derechos.</p>
     </div>
@@ -22,7 +22,7 @@
       <h3>Noticias</h3>
       <p>Enterate de las últimas acciones y comunicados institucionales.</p>
     </div>
-    <div class="card card-seccion-principal" data-url="<?=CONTACTENOS?>">
+    <div class="card card-seccion-principal" data-url="<?= CONTACTENOS ?>">
       <h3>Contacto</h3>
       <p>Mandanos tus inquietudes, quejas o sugerencias. Estamos para escucharte.</p>
     </div>
@@ -45,5 +45,13 @@
       });
     });
   </script>
+  <!--script para el boton de volver arriba-->
+  <script>
+  document.querySelector('.flecha-pegada-footer a').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
 </body>
 </html>

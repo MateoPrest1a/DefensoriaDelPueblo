@@ -180,14 +180,57 @@ main {
 footer {
   background-color: #003366;
   color: white;
-  text-align: center;
-  padding: 30px 20px;
+  padding: 40px 20px 20px;
+  position: relative;
 }
 
-footer a {
+footer h5, footer h6 {
+  color: white;
+  font-size: 1.1rem;
+}
+
+footer p {
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+footer a.social-icon {
   color: #6FB1FC;
+  transition: color 0.3s ease;
+}
+
+footer a.social-icon:hover {
+  color: #ffffff;
+}
+
+footer hr {
+  border-color: rgba(255,255,255,0.2);
+}
+
+footer .text-secondary {
+  color: rgba(255,255,255,0.6) !important;
+}
+/*Boton de volver arriba*/
+.flecha-pegada-footer {
+  text-align: center;
+  margin-bottom: -25px;
+  position: relative;
+  z-index: 10;
+}
+
+.flecha-pegada-footer a {
+  background-color: #003366;
+  color: white;
+  font-size: 2.2rem;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   text-decoration: none;
-  margin: 0 10px;
+  transition: transform 0.3s ease;
+}
+
+.flecha-pegada-footer a:hover {
+  transform: scale(1.1);
 }
 
 /* DROPDOWN */

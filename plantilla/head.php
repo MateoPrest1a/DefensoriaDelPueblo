@@ -43,7 +43,7 @@ if ($archivo == "inicioSesion.php" || $archivo == "backoffice.php") {
       <div class="dropdown">
         <a href="#">Prensa</a>
         <div class="dropdown-content">
-          <a href="<?= BASE_URL ?>Secciones/Prensa/Noticias/noticias.php">Noticias</a>
+          <a href="<?= BASE_URL ?>Secciones/Prensa/noticias/noticias.php">Noticias</a>
           <a href="<?= BASE_URL ?>Secciones/Prensa/Memorias/memorias.php">Memorias</a>
         </div>
       </div>

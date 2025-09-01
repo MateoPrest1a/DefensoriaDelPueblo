@@ -21,14 +21,29 @@ main {
 /* NAVBAR */
 .navbar {
   background-color: #003366;
-  padding: 15px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  position: relative;
-  z-index: 1000;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar-brand span{
+  font-size: 1.2rem;
+}
+
+.navbar-nav .navbar-link{
+  font-weight: 500;
+  color: white !important;
+}
+
+.navbar-nav .dropdown-menu {
+  background-color: #003366;
+}
+
+.dropdown-item {
+  color: white;
+}
+
+.dropdown-item:hover {
+  background-color: #003366;
+  color: #fff;
 }
 
 .navbar-menu a {
@@ -196,13 +211,37 @@ footer {
   color: white;
   text-align: center;
   padding: 30px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1rem;
 }
 
 footer a {
   color: #6FB1FC;
   text-decoration: none;
-  margin: 0 10px;
+  margin: 0 8px;
+  font-weight: 500;
 }
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 576px) {
+  footer p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  footer a {
+    display: inline-block;
+    margin: 6px 4px;
+  }
+}
+
 
 /* DROPDOWN */
 .dropdown {

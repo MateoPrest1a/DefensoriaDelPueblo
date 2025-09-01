@@ -11,7 +11,6 @@ if ($archivo == "inicioSesion.php" || $archivo == "backoffice.php") {
 
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,52 +21,60 @@ if ($archivo == "inicioSesion.php" || $archivo == "backoffice.php") {
 </head>
 
 <body>
-  <nav class="navbar">
-    <div class="navbar-logo">
-      <a href="<?= BASE_URL ?>Secciones/Inicio/principal.php">
-        <img src="<?= BASE_URL ?>plantilla/logo_viejo.png" alt="Logo" style="height:60px; margin-right:20px;">
-      </a>
-    </div>
-    <div class="navbar-menu">
-      <!-- Institucional -->
-      <div class="dropdown">
-        <a href="#">Institucional</a>
-        <div class="dropdown-content">
-          <a href="<?= BASE_URL ?>Secciones/Institucional/QueHacemos/queHacemos.php">¿Qué hacemos?</a>
-          <a href="<?= BASE_URL ?>Secciones/Institucional/Autoridades/autoridades.php">Autoridades</a>
-        </div>
-      </div>
+  <nav class="navbar navbar-expand-lg navbar-dark px-3">
+    <a class="navbar-brand d-flex align-items-center" href="<?= BASE_URL ?>Secciones/Inicio/principal.php">
+      <img src="<?= BASE_URL ?>plantilla/logo_viejo.png" alt="Logo" style="height:60px; margin-right:10px;">
+      <span class="fw-bold text-white"><?= TITULO ?></span>
+    </a>
 
-      <!-- Prensa -->
-      <div class="dropdown">
-        <a href="#">Prensa</a>
-        <div class="dropdown-content">
-          <a href="<?= BASE_URL ?>Secciones/Prensa/Noticias/noticias.php">Noticias</a>
-          <a href="<?= BASE_URL ?>Secciones/Prensa/Memorias/memorias.php">Memorias</a>
-        </div>
-      </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContenido" aria-controls="navbarContenido" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <!-- Normativa -->
-      <div class="dropdown">
-        <a href="#">Normativa</a>
-        <div class="dropdown-content">
-          <a href="<?= BASE_URL ?>Secciones/Normativa/Ordenanzas/ordenanzas.php">Ordenanzas</a>
-          <a href="<?= BASE_URL ?>Secciones/Normativa/Reglamentos/reglamentos.php">Reglamento Interno</a>
-          <a href="<?= BASE_URL ?>Secciones/Normativa/Resoluciones/resoluciones.php">Resoluciones</a>
-        </div>
-      </div>
+    <div class="collapse navbar-collapse" id="navbarContenido">
+      <ul class="navbar-nav ms-auto">
+        <!-- Institucional -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Institucional</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="<?= BASE_URL ?>Secciones/Institucional/QueHacemos/queHacemos.php">¿Qué hacemos?</a></li>
+            <li><a class="dropdown-item" href="<?= BASE_URL ?>Secciones/Institucional/Autoridades/autoridades.php">Autoridades</a></li>
+          </ul>
+        </li>
 
-      <!-- Links -->
-      <a href="<?= BASE_URL ?>Secciones/Links/links.php">Links</a>
+        <!-- Prensa -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Prensa</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="<?= BASE_URL ?>Secciones/Prensa/Noticias/noticias.php">Noticias</a></li>
+            <li><a class="dropdown-item" href="<?= BASE_URL ?>Secciones/Prensa/Memorias/memorias.php">Memorias</a></li>
+          </ul>
+        </li>
 
-      <!-- Contacto -->
-      <div class="dropdown">
-        <a href="#">Contáctenos</a>
-        <div class="dropdown-content">
-          <a href="<?= BASE_URL ?>Secciones/Contactenos/FAQ/faq.php">FAQ</a>
-          <a href="<?= BASE_URL ?>Secciones/Contactenos/FormContacto/contactenos.php">Formulario de Contacto</a>
-        </div>
-      </div>
-    </div>
+        <!-- Normativa -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Normativa</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="<?= BASE_URL ?>Secciones/Normativa/Ordenanzas/ordenanzas.php">Ordenanzas</a></li>
+            <li><a class="dropdown-item" href="<?= BASE_URL ?>Secciones/Normativa/Reglamentos/reglamentos.php">Reglamento Interno</a></li>
+            <li><a class="dropdown-item" href="<?= BASE_URL ?>Secciones/Normativa/Resoluciones/resoluciones.php">Resoluciones</a></li>
+          </ul>
+        </li>
+
+        <!-- Links -->
+        <li class="nav-item">
+          <a class="nav-link" href="<?= BASE_URL ?>Secciones/Links/links.php">Links</a>
+        </li>
+
+        <!-- Contacto -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Contáctenos</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="<?= BASE_URL ?>Secciones/Contactenos/FAQ/faq.php">FAQ</a></li>
+            <li><a class="dropdown-item" href="<?= BASE_URL ?>Secciones/Contactenos/FormContacto/contactenos.php">Formulario de Contacto</a></li>
+          </ul>
+        </li>
+        
+      </ul>
     </div>
   </nav>

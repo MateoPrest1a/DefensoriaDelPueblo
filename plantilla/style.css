@@ -21,14 +21,29 @@ main {
 /* NAVBAR */
 .navbar {
   background-color: #003366;
-  padding: 15px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  position: relative;
-  z-index: 1000;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar-brand span{
+  font-size: 1.2rem;
+}
+
+.navbar-nav .navbar-link{
+  font-weight: 500;
+  color: white !important;
+}
+
+.navbar-nav .dropdown-menu {
+  background-color: #003366;
+}
+
+.dropdown-item {
+  color: white;
+}
+
+.dropdown-item:hover {
+  background-color: #003366;
+  color: #fff;
 }
 
 .navbar-menu a {
@@ -106,10 +121,13 @@ main {
 .card-section {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch; /*center sino */
   padding: 60px 30px;
   max-width: 1200px;
   margin: auto;
+
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 @keyframes slidein {
@@ -124,13 +142,15 @@ main {
 }
 
 .card {
-  max-width: 400px;
+  /*max-width: 400px;*/
+  width: 100%;
   padding: 30px;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   text-align: center;
-  margin-right: auto;
+  /*margin-right: auto;*/
+  flex: 1 1 300px; /*Cambio temporal*/
 }
 
 
@@ -163,7 +183,16 @@ main {
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   transition: box-shadow 0.3s ease;
   position: relative;
-  /*transition: transform 0.5 cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.5 cubic-bezier(0.25, 0.8, 0.25, 1);*/
+
+  /* Ajustes de Tamaño Responsive (Solo para esta clase)*/
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  min-width: 280px;    
+  max-width: 100%;     
+  box-sizing: border-box;
 }
 
 .card-seccion-principal:hover{
@@ -216,6 +245,12 @@ footer .text-secondary {
   margin-bottom: -25px;
   position: relative;
   z-index: 10;
+  font-family: 'Poppins', sans-serif;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1rem;
 }
 
 .flecha-pegada-footer a {
@@ -232,6 +267,26 @@ footer .text-secondary {
 .flecha-pegada-footer a:hover {
   transform: scale(1.1);
 }
+  margin: 0 8px;
+  font-weight: 500;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 576px) {
+  footer p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  footer a {
+    display: inline-block;
+    margin: 6px 4px;
+  }
+}
+
 
 /* DROPDOWN */
 .dropdown {
@@ -286,17 +341,25 @@ footer .text-secondary {
   color: #212529;
   text-align: justify;
 }
+
 .card-contacto {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
   max-width: 700px;
   margin: auto;
-  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .card-contacto-body {
+  position: relative;
+  z-index: 2;
   padding: 30px;
+  background-color: transparent; /* sin fondo sólido */
 }
 
-.card-contacto label {
+
+.card-contacto p {
   font-weight: 600;
   color: #003366;
 }
@@ -347,9 +410,84 @@ footer .text-secondary {
   width: 100%;
 }
 
+/*Formulario Contactenos*/
 
+/*Responsive en Dispositivos Moviles*/
+@media (max-width: 576px) {
+  .form-label.fs-4 {
+    font-size: 1.1rem;
+  }
 
+  .titulo-contacto {
+    font-size: 1.8rem;
+    text-align: center;
+  }
 
+  .btn-toggle-form {
+    font-size: 1rem;
+    padding: 10px 16px;
+  }
 
+  .card-contacto-body {
+    padding: 20px;
+  }
 
+  .form-control {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
+
+/*================================*/
+
+.titulo-contactenos{
+  font-size: 10rem;
+}
+
+/* BOTONES FORMULARIO CONTACTENOS */
+.btn-toggle-form {
+  padding: 14px 28px;
+  margin: 0 12px;
+  border: 2px solid rgba(0, 111, 221, 1);
+  background-color: white;
+  color: rgba(0, 51, 102, 1);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+}
+
+.btn-toggle-form.active {
+  background-color: rgba(0, 51, 102, 1);
+  color: white;
+  box-shadow: 0 0 10px rgba(0,123,255,0.4);
+  transform: scale(1.08);
+}
+
+.campo-obligatorio {
+  border: 2px solid red !important;
+}
+
+.asterisco {
+  color: red;
+  font-weight: bold;
+  margin-left: 4px;
+  opacity: 0;
+  display: inline-block;
+}
+
+.animar-asterisco {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fondo-contactenos{
+  background-image: url("imgs/mardelplata-byn.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 

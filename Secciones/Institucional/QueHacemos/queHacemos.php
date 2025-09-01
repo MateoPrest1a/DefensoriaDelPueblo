@@ -20,7 +20,6 @@
                 </div>
             </div>
         </div>
-        
 <?php include('../../../plantilla/footer.php'); ?>
 
 </body>

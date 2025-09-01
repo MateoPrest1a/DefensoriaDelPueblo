@@ -43,14 +43,14 @@ if ($archivo == "inicioSesion.php" || $archivo == "backoffice.php") {
           </ul>
         </li>
 
-        <!-- Prensa -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Prensa</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="<?= BASE_URL ?>Secciones/Prensa/Noticias/noticias.php">Noticias</a></li>
-            <li><a class="dropdown-item" href="<?= BASE_URL ?>Secciones/Prensa/Memorias/memorias.php">Memorias</a></li>
-          </ul>
-        </li>
+      <!-- Prensa -->
+      <div class="dropdown">
+        <a href="#">Prensa</a>
+        <div class="dropdown-content">
+          <a href="<?= BASE_URL ?>Secciones/Prensa/noticias/noticias.php">Noticias</a>
+          <a href="<?= BASE_URL ?>Secciones/Prensa/Memorias/memorias.php">Memorias</a>
+        </div>
+      </div>
 
         <!-- Normativa -->
         <li class="nav-item dropdown">

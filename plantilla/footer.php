@@ -35,4 +35,6 @@
       <hr class="border-top border-secondary mt-4">
       <p class="text-center mb-0 small text-secondary">© 2025 Defensoría del Pueblo. Todos los derechos reservados.</p>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+
 

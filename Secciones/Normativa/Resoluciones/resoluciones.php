@@ -1,8 +1,13 @@
-<?php 
-include('../../../plantilla/head.php'); 
+<?php
+include('../../../plantilla/head.php');
 include_once __DIR__ . '/../../../breadcrumbConfig.php';
 include_once __DIR__ . '/../../../breadcrumb.php';
+include_once __DIR__ . "/../../../Conexion/conexion.php";
+
 echo breadcrumbPersonalizado($breadcrumbNames);
+
+$sql = "SELECT resolucion_id, estado, Anio, Titulo, pdf FROM resoluciones WHERE estado = 1 ORDER BY resolucion_id DESC";
+$resultado = mysqli_query($link, $sql);
 ?>
 
 <main>
@@ -11,50 +16,23 @@ echo breadcrumbPersonalizado($breadcrumbNames);
 
     <div class="row justify-content-center">
       <div class="col-lg-8">
-
-        <!-- Resolución 1/2015 -->
-        <div class="card shadow-sm border-0 mb-4 mx-auto">
-          <div class="card-body">
-            <h5 class="card-title text-uppercase fw-bold mb-3">Resolución 1/2015</h5>
-            <p class="card-text">En el siguiente link, puede acceder a la Resolución 1/2015.</p>
-            <a href="http://www.defensoriadelpueblo.mdp.gob.ar/wp-content/uploads/2015/06/resolucion-01-2015.pdf" class="btn btn-outline-primary" target="_blank">
-              <i class="bi bi-file-earmark-text me-2"></i> Ver Resolución Completa
-            </a>
-          </div>
-        </div>
-
-        <!-- Resolución 2/2015 -->
-        <div class="card shadow-sm border-0 mb-4 mx-auto">
-          <div class="card-body">
-            <h5 class="card-title text-uppercase fw-bold mb-3">Resolución 2/2015</h5>
-            <p class="card-text">En el siguiente link, puede acceder a la Resolución 2/2015.</p>
-            <a href="http://www.defensoriadelpueblo.mdp.gob.ar/wp-content/uploads/2015/06/resolucion-02-2015.pdf" class="btn btn-outline-primary" target="_blank">
-              <i class="bi bi-file-earmark-text me-2"></i> Ver Resolución Completa
-            </a>
-          </div>
-        </div>
-
-        <!-- Resolución 3/2015 -->
-        <div class="card shadow-sm border-0 mb-4 mx-auto">
-          <div class="card-body">
-            <h5 class="card-title text-uppercase fw-bold mb-3">Resolución 3/2015</h5>
-            <p class="card-text">En el siguiente link, puede acceder a la Resolución 3/2015.</p>
-            <a href="http://www.defensoriadelpueblo.mdp.gob.ar/wp-content/uploads/2015/06/resolucion-03-2015.pdf" class="btn btn-outline-primary" target="_blank">
-              <i class="bi bi-file-earmark-text me-2"></i> Ver Resolución Completa
-            </a>
-          </div>
-        </div>
-
-        <!-- Resolución 4/2015 -->
-        <div class="card shadow-sm border-0 mb-4 mx-auto">
-          <div class="card-body">
-            <h5 class="card-title text-uppercase fw-bold mb-3">Resolución 4/2015</h5>
-            <p class="card-text">En el siguiente link, puede acceder a la Resolución 4/2015.</p>
-            <a href="http://www.defensoriadelpueblo.mdp.gob.ar/wp-content/uploads/2015/06/resolucion-04-2015.pdf" class="btn btn-outline-primary" target="_blank">
-              <i class="bi bi-file-earmark-text me-2"></i> Ver Resolución Completa
-            </a>
-          </div>
-        </div>
+        <?php if ($resultado && mysqli_num_rows($resultado) > 0): ?>
+          <?php while ($row = mysqli_fetch_assoc($resultado)): ?>
+            <div class="card shadow-sm border-0 mb-4 mx-auto">
+              <div class="card-body">
+                <h5 class="card-title text-uppercase fw-bold mb-3">
+                  Resolución <?= htmlspecialchars($row['resolucion_id']) ?>/<?= htmlspecialchars($row['Anio']) ?>
+                </h5>
+                <p class="card-text"><?= htmlspecialchars($row['Titulo']) ?></p>
+                <a href="<?= htmlspecialchars($row['pdf']) ?>" class="btn btn-outline-primary" target="_blank">
+                  <i class="bi bi-file-earmark-text me-2"></i> Ver Resolución Completa
+                </a>
+              </div>
+            </div>
+          <?php endwhile; ?>
+        <?php else: ?>
+          <p class="text-center">No se encontraron resoluciones activas.</p>
+        <?php endif; ?>
       </div>
     </div>
   </div>

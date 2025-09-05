@@ -23,15 +23,6 @@
           </div>
 
         <!-- Redes -->
-        <div class="col-md-4">
-          <h6 class="fw-semibold mb-2">Seguinos</h6>
-          <a href="https://www.facebook.com/defensoriadelpueblomgp/?locale=es_LA" class="text-white fs-4 me-3 social-icon"><i class="bi bi-facebook"></i></a>
-          <a href="https://www.instagram.com/defensoriamgp/" class="text-white fs-4 me-3 social-icon"><i class="bi bi-instagram"></i></a>
-          <a href="https://wa.me/5492234996502" class="text-white fs-4 me-3 social-icon"><i class="bi bi-whatsapp"></i></a>
-          <a href="https://x.com/DefensorMGP" class="text-white fs-4 me-3 social-icon"> <i class="bi bi-twitter"></i></a>
-        </div>
-      </div>
-        <!-- Redes -->
           <div class="col-md-4">
             <h6 class="fw-semibold mb-2">Seguinos</h6>
             <a href="https://www.facebook.com/defensoriadelpueblomgp/?locale=es_LA" class="text-white fs-4 me-3 social-icon"><i class="bi bi-facebook"></i></a>
@@ -41,7 +32,11 @@
           </div>
         </div>
 
-      <hr class="border-top border-secondary mt-4">
-      <p class="text-center mb-0 small text-secondary">© 2025 Defensoría del Pueblo. Todos los derechos reservados.</p>
-  </div>
+        <hr class="border-top border-secondary mt-4">
+        <p class="text-center mb-0 small text-secondary">© 2025 Defensoría del Pueblo. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  
+
 

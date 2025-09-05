@@ -4,15 +4,40 @@ include_once __DIR__ . '/../../../breadcrumbConfig.php';
 include_once __DIR__ . '/../../../breadcrumb.php';
 include_once __DIR__ . "/../../../Conexion/conexion.php";
 
-echo breadcrumbPersonalizado($breadcrumbNames);
+$aniosQuery = "SELECT DISTINCT Anio FROM resoluciones ORDER BY Anio DESC";
+$aniosResult = mysqli_query($link, $aniosQuery);
 
-$sql = "SELECT resolucion_id, estado, Anio, Titulo, pdf FROM resoluciones WHERE estado = 1 ORDER BY resolucion_id DESC";
+$anioSeleccionado = isset($_GET['anio']) ? intval($_GET['anio']) : 0;
+
+$sql = "SELECT resolucion_id, estado, Anio, Titulo, pdf 
+        FROM resoluciones 
+        WHERE estado = 1";
+
+if ($anioSeleccionado > 0) {
+    $sql .= " AND Anio = $anioSeleccionado";
+}
+
+$sql .= " ORDER BY resolucion_id DESC";
 $resultado = mysqli_query($link, $sql);
 ?>
 
 <main>
   <div class="container py-5">
-    <h1 class="text-center mb-5">Resoluciones de la Defensoría del Pueblo de la Municipalidad de General Pueyrredon</h1>
+    <h1 class="text-center mb-4">Resoluciones de la Defensoría del Pueblo de la Municipalidad de General Pueyrredon</h1>
+
+    <!-- Formulario de filtro -->
+    <form method="GET" class="mb-4 text-center">
+      <label for="anio" class="form-label fw-bold">Filtrar por Año:</label>
+      <select name="anio" id="anio" class="form-select d-inline-block w-auto mx-2">
+        <option value="">Todos</option>
+        <?php while ($anioRow = mysqli_fetch_assoc($aniosResult)): ?>
+          <option value="<?= $anioRow['Anio'] ?>" <?= ($anioSeleccionado == $anioRow['Anio']) ? 'selected' : '' ?>>
+            <?= $anioRow['Anio'] ?>
+          </option>
+        <?php endwhile; ?>
+      </select>
+      <button type="submit" class="btn btn-primary">Filtrar</button>
+    </form>
 
     <div class="row justify-content-center">
       <div class="col-lg-8">
@@ -31,7 +56,7 @@ $resultado = mysqli_query($link, $sql);
             </div>
           <?php endwhile; ?>
         <?php else: ?>
-          <p class="text-center">No se encontraron resoluciones activas.</p>
+          <p class="text-center">No se encontraron resoluciones para el año seleccionado.</p>
         <?php endif; ?>
       </div>
     </div>

@@ -490,3 +490,39 @@ footer a:hover {
   background-repeat: no-repeat;
 }
 
+/* SECCION de FAQ */
+
+.faq-item .accordion-button {
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+}
+
+.faq-item .accordion-body {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+.accordion-item {
+  overflow: hidden; /* mantiene visibles las esquinas redondeadas */
+  border-radius: 0; /* reseteamos para controlar manualmente */
+}
+
+/* Primer item → esquinas de arriba */
+.accordion-item:first-of-type {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+/* Último item → esquinas de abajo */
+.accordion-item:last-of-type {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+/* Botones internos sin bordes cuadrados */
+.accordion-button {
+  border-radius: 0 !important;
+}

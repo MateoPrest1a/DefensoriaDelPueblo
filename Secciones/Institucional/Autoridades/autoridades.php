@@ -17,4 +17,7 @@
         </div>
     </div>
 </main>
-<?php include('../../../plantilla/footer.php'); ?>
+    <?php include('../../../plantilla/footer.php'); ?>
+    
+</body>
+</html>

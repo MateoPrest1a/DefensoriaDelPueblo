@@ -74,6 +74,7 @@ echo breadcrumbPersonalizado($breadcrumbNames);
 
 <?php include('../../../plantilla/footer.php'); ?>
 </body>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 
@@ -136,5 +137,4 @@ $(document).ready(function () {
 });
 
 </script>
-
 </html>

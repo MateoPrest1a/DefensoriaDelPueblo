@@ -43,7 +43,7 @@ $archivo = archivo_actual();
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Prensa</a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="<?= BASE_URL ?>Secciones/Prensa/Noticias/noticias.php">Noticias</a></li>
-            <li><a class="dropdown-item" href="<?= BASE_URL ?>Secciones/Prensa/Noticias/memorias.php">Memorias</a></li>
+            <li><a class="dropdown-item" href="<?= BASE_URL ?>Secciones/Prensa/Memorias/memorias.php">Memorias</a></li>
           </ul>
         </li>
         <!-- Normativa -->

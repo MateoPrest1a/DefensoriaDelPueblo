@@ -1,12 +1,6 @@
 <?php
 include_once __DIR__ . '/../parametros.php';
 $archivo = archivo_actual();
-
-if ($archivo == "inicioSesion.php" || $archivo == "backoffice.php") {
-  $botonSesion = '<a href="' . BASE_URL . 'index.php" class="btn btn-outline-light btn-sm">Cerrar sesión</a>';
-} else {
-  $botonSesion = '<a href="' . BASE_URL . 'BackOffice/Login/inicioSesion.php" class="btn btn-outline-light btn-sm">Iniciar sesión</a>';
-}
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +43,7 @@ if ($archivo == "inicioSesion.php" || $archivo == "backoffice.php") {
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Prensa</a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="<?= BASE_URL ?>Secciones/Prensa/Noticias/noticias.php">Noticias</a></li>
-            <li><a class="dropdown-item" href="<?= BASE_URL ?>Secciones/Prensa/Noticias/memorias.php">Memorias</a></li>
+            <li><a class="dropdown-item" href="<?= BASE_URL ?>Secciones/Prensa/Memorias/memorias.php">Memorias</a></li>
           </ul>
         </li>
         <!-- Normativa -->
@@ -57,7 +51,7 @@ if ($archivo == "inicioSesion.php" || $archivo == "backoffice.php") {
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Normativa</a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="<?= BASE_URL ?>Secciones/Normativa/Ordenanzas/ordenanzas.php">Ordenanzas</a></li>
-            <li><a class="dropdown-item" href="<?= BASE_URL ?>Secciones/Normativa/Reglamentos/reglamentos.php">Reglamento Interno</a></li>
+            <li><a class="dropdown-item" href="<?= BASE_URL ?>Secciones/Normativa/Reglamento/reglamento.php">Reglamento Interno</a></li>
             <li><a class="dropdown-item" href="<?= BASE_URL ?>Secciones/Normativa/Resoluciones/resoluciones.php">Resoluciones</a></li>
           </ul>
         </li>
@@ -80,4 +74,5 @@ if ($archivo == "inicioSesion.php" || $archivo == "backoffice.php") {
     </div>
   </nav>
 
+  
   

@@ -1,60 +1,71 @@
-<?php 
-include('../../../plantilla/head.php'); 
+<?php
+include('../../../plantilla/head.php');
 include_once __DIR__ . '/../../../breadcrumbConfig.php';
 include_once __DIR__ . '/../../../breadcrumb.php';
-echo breadcrumbPersonalizado($breadcrumbNames);
+include_once __DIR__ . "/../../../Conexion/conexion.php";
+
+$aniosQuery = "SELECT DISTINCT Anio FROM resoluciones ORDER BY Anio DESC";
+$aniosResult = mysqli_query($link, $aniosQuery);
+
+$anioSeleccionado = isset($_GET['anio']) ? intval($_GET['anio']) : 0;
+
+$sql = "SELECT resolucion_id, estado, Anio, Titulo, pdf 
+        FROM resoluciones 
+        WHERE estado = 1";
+
+if ($anioSeleccionado > 0) {
+    $sql .= " AND Anio = $anioSeleccionado";
+}
+
+$sql .= " ORDER BY resolucion_id DESC";
+$resultado = mysqli_query($link, $sql);
 ?>
 
 <main>
   <div class="container py-5">
-    <h1 class="text-center mb-5">Resoluciones de la Defensoría del Pueblo de la Municipalidad de General Pueyrredon</h1>
+    <h1 class="text-center mb-4">Resoluciones de la Defensoría del Pueblo de la Municipalidad de General Pueyrredon</h1>
+
+    <!-- Formulario de filtro -->
+    <form method="GET" class="mb-4 text-center">
+      <label for="anio" class="form-label fw-bold">Filtrar por Año:</label>
+      <select name="anio" id="anio" class="form-select d-inline-block w-auto mx-2">
+        <option value="">Todos</option>
+        <?php while ($anioRow = mysqli_fetch_assoc($aniosResult)): ?>
+          <option value="<?= $anioRow['Anio'] ?>" <?= ($anioSeleccionado == $anioRow['Anio']) ? 'selected' : '' ?>>
+            <?= $anioRow['Anio'] ?>
+          </option>
+        <?php endwhile; ?>
+      </select>
+      <button type="submit" class="btn btn-primary">Filtrar</button>
+    </form>
 
     <div class="row justify-content-center">
       <div class="col-lg-8">
-
-        <!-- Resolución 1/2015 -->
-        <div class="card shadow-sm border-0 mb-4 mx-auto">
-          <div class="card-body">
-            <h5 class="card-title text-uppercase fw-bold mb-3">Resolución 1/2015</h5>
-            <p class="card-text">En el siguiente link, puede acceder a la Resolución 1/2015.</p>
-            <a href="http://www.defensoriadelpueblo.mdp.gob.ar/wp-content/uploads/2015/06/resolucion-01-2015.pdf" class="btn btn-outline-primary" target="_blank">
-              <i class="bi bi-file-earmark-text me-2"></i> Ver Resolución Completa
-            </a>
-          </div>
-        </div>
-
-        <!-- Resolución 2/2015 -->
-        <div class="card shadow-sm border-0 mb-4 mx-auto">
-          <div class="card-body">
-            <h5 class="card-title text-uppercase fw-bold mb-3">Resolución 2/2015</h5>
-            <p class="card-text">En el siguiente link, puede acceder a la Resolución 2/2015.</p>
-            <a href="http://www.defensoriadelpueblo.mdp.gob.ar/wp-content/uploads/2015/06/resolucion-02-2015.pdf" class="btn btn-outline-primary" target="_blank">
-              <i class="bi bi-file-earmark-text me-2"></i> Ver Resolución Completa
-            </a>
-          </div>
-        </div>
-
-        <!-- Resolución 3/2015 -->
-        <div class="card shadow-sm border-0 mb-4 mx-auto">
-          <div class="card-body">
-            <h5 class="card-title text-uppercase fw-bold mb-3">Resolución 3/2015</h5>
-            <p class="card-text">En el siguiente link, puede acceder a la Resolución 3/2015.</p>
-            <a href="http://www.defensoriadelpueblo.mdp.gob.ar/wp-content/uploads/2015/06/resolucion-03-2015.pdf" class="btn btn-outline-primary" target="_blank">
-              <i class="bi bi-file-earmark-text me-2"></i> Ver Resolución Completa
-            </a>
-          </div>
-        </div>
-
-        <!-- Resolución 4/2015 -->
-        <div class="card shadow-sm border-0 mb-4 mx-auto">
-          <div class="card-body">
-            <h5 class="card-title text-uppercase fw-bold mb-3">Resolución 4/2015</h5>
-            <p class="card-text">En el siguiente link, puede acceder a la Resolución 4/2015.</p>
-            <a href="http://www.defensoriadelpueblo.mdp.gob.ar/wp-content/uploads/2015/06/resolucion-04-2015.pdf" class="btn btn-outline-primary" target="_blank">
-              <i class="bi bi-file-earmark-text me-2"></i> Ver Resolución Completa
-            </a>
-          </div>
-        </div>
+        <?php if ($resultado && mysqli_num_rows($resultado) > 0): ?>
+          <?php while ($row = mysqli_fetch_assoc($resultado)): ?>
+            <div class="card shadow-sm border-0 mb-4 mx-auto">
+              <div class="card-body">
+                <h5 class="card-title text-uppercase fw-bold mb-3">
+                  Resolución <?= htmlspecialchars($row['resolucion_id']) ?>/<?= htmlspecialchars($row['Anio']) ?>
+                </h5>
+                <p class="card-text"><?= htmlspecialchars($row['Titulo']) ?></p>
+                <?php
+                  $pdfUrl = $row['pdf'];
+                  // Si no empieza con http:// o https://, se asume que es local
+                  if (!preg_match('/^https?:\/\//i', $pdfUrl)) {
+                    // Ajusta la ruta base según tu estructura
+                    $pdfUrl = '/DefensoriaDelPueblo/' . ltrim($pdfUrl, '/');
+                  }
+                ?>
+                <a href="<?= htmlspecialchars($pdfUrl) ?>" class="btn btn-outline-primary" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-file-earmark-text me-2"></i> Ver Resolución Completa
+                </a>
+              </div>
+            </div>
+          <?php endwhile; ?>
+        <?php else: ?>
+          <p class="text-center">No se encontraron resoluciones para el año seleccionado.</p>
+        <?php endif; ?>
       </div>
     </div>
   </div>

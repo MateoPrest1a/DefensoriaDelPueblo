@@ -18,7 +18,7 @@
       <h3>¿Qué hacemos?</h3>
       <p>Conocé nuestras funciones y cómo trabajamos para defender tus derechos.</p>
     </div>
-    <div class="card card-seccion-principal" data-url="#">
+    <div class="card card-seccion-principal" data-url="<?= NOTICIAS?>">
       <h3>Noticias</h3>
       <p>Enterate de las últimas acciones y comunicados institucionales.</p>
     </div>

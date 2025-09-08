@@ -14,10 +14,10 @@ echo breadcrumbPersonalizado($breadcrumbNames);
         <div class="card shadow-sm border-0 mx-auto">
           <div class="card-body">
             <h5 class="card-title text-uppercase fw-bold mb-3">
-              Ordenanza Nº 13.663
+              Ordenanza Nº 21.430
             </h5>
             <p class="card-text">
-              En el siguiente link, puede acceder a la Ordenanza Nº 13.663 con su texto ordenado.
+              En el siguiente link, puede acceder a la Ordenanza Nº 21.430 con su texto ordenado.
             </p>
 
             <a href="http://www.defensoriadelpueblo.mdp.gob.ar/wp-content/uploads/2015/05/DEFENSOR-DEL-PUEBLO-DEL-PARTIDO-DE-GENERAL-PUEYRREDON.pdf" class="btn btn-outline-primary" target="_blank">

@@ -5,5 +5,10 @@ include_once __DIR__ . '/../../../breadcrumbConfig.php';
 include_once __DIR__ . '/../../../breadcrumb.php'; 
 mysqli_set_charset($link, "utf8mb4");
 ?>
+    <section>
+        
+    </section>
 
-<?php include('../../../plantilla/footer.php'); ?>
+    <?php include('../../../plantilla/footer.php'); ?>
+    </body>
+</html>

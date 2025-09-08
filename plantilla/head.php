@@ -65,11 +65,10 @@ $archivo = archivo_actual();
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Contáctenos</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="<?= BASE_URL ?>Secciones/Contactenos/FAQ/faq.php">FAQ</a></li>
+            <li><a class="dropdown-item" href="<?= BASE_URL ?>Secciones/Contactenos/FAQ/faq.php">Preguntas Frecuentes</a></li>
             <li><a class="dropdown-item" href="<?= BASE_URL ?>Secciones/Contactenos/FormContacto/contactenos.php">Formulario de Contacto</a></li>
           </ul>
         </li>
-
       </ul>
     </div>
   </nav>

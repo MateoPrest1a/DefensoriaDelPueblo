@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
-<?php include('../../plantilla/head.php'); ?>
+<?php
+include('../../plantilla/head.php');
+include_once __DIR__ . "/../../Conexion/conexion.php";
+
+$sqlCarrusel = "SELECT noticia_id, titulo, contenido, foto FROM noticias WHERE estado = 1 ORDER BY fecha_publicacion DESC LIMIT 5";
+$resultadoCarrusel = mysqli_query($link, $sqlCarrusel);
+?>
 
 <body>
   <section class="hero-defensoria">
@@ -33,6 +39,40 @@
       <img src="./images/mapa.png" alt="Ubicación Municipalidad" class="img-fluid" style="max-height: 400px; object-fit: cover;">
     </a>
   </div>
+  <br>
+  <br>
+  <section class="slider-noticias container py-4 position-relative">
+    <h2 class="fs-4 fw-bold text-black mb-3 position-relative">
+      Últimas Noticias
+      <span class="decor-line"></span>
+    </h2>
+
+    <!-- Flechas -->
+    <button class="slider-btn prev-btn" onclick="document.getElementById('sliderWrapper').scrollBy({left: -320, behavior: 'smooth'})">
+      <i class="bi bi-chevron-left"></i>
+    </button>
+    <button class="slider-btn next-btn" onclick="document.getElementById('sliderWrapper').scrollBy({left: 320, behavior: 'smooth'})">
+      <i class="bi bi-chevron-right"></i>
+    </button>
+
+    <div class="slider-wrapper d-flex overflow-auto gap-4 pb-3" id="sliderWrapper">
+      <?php
+      mysqli_data_seek($resultadoCarrusel, 0);
+      while ($noticia = mysqli_fetch_assoc($resultadoCarrusel)) {
+        $foto = !empty($noticia['foto']) ? '/' . $noticia['foto'] : './images/default.jpg';
+      ?>
+        <div class="card flex-shrink-0" style="min-width: 300px; max-width: 300px;">
+          <img src="<?= $foto ?>" class="card-img-top object-fit-cover" style="height: 180px;" alt="Imagen noticia">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title fw-semibold"><?= htmlspecialchars($noticia['titulo']) ?></h5>
+            <p class="card-text small text-muted"><?= substr(strip_tags($noticia['contenido']), 0, 100) ?>...</p>
+            <a href="../Prensa/noticias/detalleNoticia.php?id=<?= $noticia['noticia_id'] ?>" class="btn btn-sm btn-outline-primary mt-auto rounded-pill d-flex align-items-center justify-content-center gap-2">
+              Ver más <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      <?php } ?>
+  </section>
   <br>
   <?php include('../../plantilla/footer.php'); ?>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

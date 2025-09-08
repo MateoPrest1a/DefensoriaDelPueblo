@@ -49,15 +49,7 @@ $resultado = mysqli_query($link, $sql);
                   Resolución <?= htmlspecialchars($row['resolucion_id']) ?>/<?= htmlspecialchars($row['Anio']) ?>
                 </h5>
                 <p class="card-text"><?= htmlspecialchars($row['Titulo']) ?></p>
-                <?php
-                  $pdfUrl = $row['pdf'];
-                  // Si no empieza con http:// o https://, se asume que es local
-                  if (!preg_match('/^https?:\/\//i', $pdfUrl)) {
-                    // Ajusta la ruta base según tu estructura
-                    $pdfUrl = '/DefensoriaDelPueblo/' . ltrim($pdfUrl, '/');
-                  }
-                ?>
-                <a href="<?= htmlspecialchars($pdfUrl) ?>" class="btn btn-outline-primary" target="_blank" rel="noopener noreferrer">
+                <a href="<?= htmlspecialchars($row['pdf']) ?>" class="btn btn-outline-primary" target="_blank">
                   <i class="bi bi-file-earmark-text me-2"></i> Ver Resolución Completa
                 </a>
               </div>

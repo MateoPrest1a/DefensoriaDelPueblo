@@ -1,4 +1,5 @@
-<?php include "../../../plantilla/head.php"; ?>
+<?php include "../../../plantilla/head.php"; 
+?>
 
 <?php
     include_once __DIR__ . '/../../../breadcrumbConfig.php';

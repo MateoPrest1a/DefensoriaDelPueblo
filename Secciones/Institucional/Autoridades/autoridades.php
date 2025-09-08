@@ -9,7 +9,7 @@
                 <div class="card mx-auto">
                     <div class="card-body">
                     <h5>Defensor del Pueblo</h5>
-                    <p> Abog. Marcelo Pablo Lacedonia</p>
+                    <p>Abog. Marcelo Pablo Lacedonia</p>
                     <img src="../../../plantilla/imgs/defensor.jpg" alt="Abog. Marcelo Pablo Lacedonia">
                     </div>
                 </div>

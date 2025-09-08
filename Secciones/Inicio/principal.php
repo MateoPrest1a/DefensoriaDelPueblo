@@ -18,7 +18,7 @@
       <h3>¿Qué hacemos?</h3>
       <p>Conocé nuestras funciones y cómo trabajamos para defender tus derechos.</p>
     </div>
-    <div class="card card-seccion-principal" data-url="<?= NOTICIAS?>">
+    <div class="card card-seccion-principal" data-url="<?= NOTICIAS ?>">
       <h3>Noticias</h3>
       <p>Enterate de las últimas acciones y comunicados institucionales.</p>
     </div>
@@ -35,6 +35,7 @@
   </div>
   <br>
   <?php include('../../plantilla/footer.php'); ?>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script>
     $(document).ready(function() {
       $('.card').on('click', function() {
@@ -45,12 +46,14 @@
   </script>
   <!--script para el boton de volver arriba-->
   <script>
-  document.querySelector('.flecha-pegada-footer a').addEventListener('click', function(e) {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-</script>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    document.querySelector('.flecha-pegada-footer a').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
 </body>
+
 </html>

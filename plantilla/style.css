@@ -684,3 +684,139 @@ footer a:hover {
 .accordion-button {
   border-radius: 0 !important;
 }
+/*CSS para el apartado de noticias*/
+.share-icons i {
+  font-size: 1.2rem;
+  transition: transform 0.2s ease;
+}
+
+.share-icons i:hover {
+  transform: scale(1.2);
+}
+
+.object-fit-cover {
+  object-fit: cover;
+}
+
+.btn-outline-primary {
+  border-color: #003366;
+  color: #003366;
+}
+
+.btn-outline-primary:hover {
+  background-color: #003366;
+  color: #fff;
+}
+#busqueda {
+  font-size: 0.95rem;
+}
+
+.seccion-noticias h2 {
+  font-size: 1.25rem;
+  letter-spacing: 0.5px;
+
+}
+
+.seccion-noticias p {
+  font-size: 0.9rem;
+  color: #555;
+}
+/*estilos para carrusel del inicio*/
+#carrusel-noticias img {
+  object-fit: cover;
+}
+
+.carousel-caption h5 {
+  font-size: 1.25rem;
+}
+
+.carousel-caption p {
+  font-size: 0.95rem;
+}
+.slider-wrapper {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+.slider-wrapper::-webkit-scrollbar {
+  display: none; 
+}
+
+.slider-wrapper .card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.slider-wrapper .card:nth-child(1) { animation-delay: 0.1s; }
+.slider-wrapper .card:nth-child(2) { animation-delay: 0.2s; }
+.slider-wrapper .card:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slider-wrapper .card:hover {
+  transform: scale(1.02);
+}
+
+.card-img-top {
+  object-fit: cover;
+}
+.slider-noticias {
+  background-color: #f8f9fc;
+  border-top: 1px solid #dee2e6;
+  border-bottom: 1px solid #dee2e6;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  position: relative;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  color: #003366;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+
+.slider-btn:hover {
+  background-color: #003366;
+  color: #fff;
+}
+
+.prev-btn {
+  left: -10px;
+}
+
+.next-btn {
+  right: -10px;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+.decor-line {
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: #003366;
+  border-radius: 2px;
+}
+
+

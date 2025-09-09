@@ -258,7 +258,7 @@ footer .text-secondary {
 /*Boton de volver arriba == COMPONENTE DE FOOTER CREADO POR CAMI */
 
 .flecha-pegada-footer {
-  justify-content: center;
+  align-items: center;
   margin-bottom: -25px;
   position: relative;
   z-index: 10;
@@ -283,73 +283,6 @@ footer .text-secondary {
   margin: 0 8px;
   font-weight: 500;
 } 
-
-/*
-.footer-wrapper {
-  position: relative;
-}
-
-/* Flecha posicionada absoluta sobre el footer 
-.flecha-pegada-footer {
-  position: absolute;
-  bottom: 100%; /* justo arriba del footer 
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-  width: 100px;
-  display: flex;
-  justify-content: center;
-  font-family: 'Poppins', sans-serif;
-}
-
-/* Estilo del botón 
-.flecha-pegada-footer a {
-  background-color: #003366;
-  color: white;
-  font-size: 2.2rem;
-  border-radius: 50%;
-  padding: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  text-decoration: none;
-  transition: transform 0.3s ease;
-}
-
-.flecha-pegada-footer a:hover {
-  transform: scale(1.1);
-  font-weight: 500;
-}
-
-*/
-
- /*
-
-.flecha-pegada-footer {
-  position: absolute;
-  bottom: 230px; /* ajustá según altura del footer 
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 100;
-}
-
-.flecha-pegada-footer a {
-  display: inline-block;
-  background-color: #003366; /* azul institucional 
-  color: white;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 50px;
-  font-size: 24px;
-  transition: background-color 0.3s ease;
-  text-decoration: none;
-}
-
-.flecha-pegada-footer a:hover {
-  background-color: #005599;
-  border-bottom-color: black;
-}
-*/
 
 footer p {
   margin: 0;

@@ -94,6 +94,7 @@ $resultadoCarrusel = mysqli_query($link, $sqlCarrusel);
       });
     });
   </script>
+  
 </body>
 
 </html>

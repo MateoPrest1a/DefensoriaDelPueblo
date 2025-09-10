@@ -9,7 +9,6 @@ include('../../plantilla/head.php');
             <hr class="mb-2 slideIn">
         </h1>
         
-
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="card shadow-sm border-0 mx-auto scroll-reveal">

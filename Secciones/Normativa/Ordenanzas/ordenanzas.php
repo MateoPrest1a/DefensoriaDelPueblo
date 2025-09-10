@@ -7,10 +7,12 @@ echo breadcrumbPersonalizado($breadcrumbNames);
 
 <main>
   <div class="container py-5">
-    <h1 class="text-center mb-5">Ordenanza de creación de la Defensoría del Pueblo</h1>
-
+    <div class="title mb-5">
+      <h1 class="text-center fadeIn">Ordenanza de creación de la Defensoría del Pueblo <hr class="mb-2 slideIn"></h1>
+    </div>
+    
     <div class="row justify-content-center">
-      <div class="col-lg-8">
+      <div class="col-lg-8 scroll-reveal">
         <div class="card shadow-sm border-0 mx-auto">
           <div class="card-body">
             <h5 class="card-title text-uppercase fw-bold mb-3">
@@ -29,5 +31,24 @@ echo breadcrumbPersonalizado($breadcrumbNames);
     </div>
   </div>
 </main>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const elementos = document.querySelectorAll(".scroll-reveal");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target); // opcional: solo una vez
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    elementos.forEach(el => observer.observe(el));
+  });
+</script>
 
 <?php include('../../../plantilla/footer.php'); ?>

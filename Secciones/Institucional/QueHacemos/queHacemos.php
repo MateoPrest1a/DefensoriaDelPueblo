@@ -20,7 +20,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-7">
+                <div class="col-12 col-md-7 align-content-center">
                     <div class="card-extension anim-container">
                         <div class="card-body anim-slide">
                             <h1 class="titulo-seccion anim-fade-titulo">¿Qué hacemos?</h1>

@@ -5,7 +5,8 @@ include_once __DIR__ . '/../../../breadcrumb.php';
 include_once __DIR__ . "/../../../Conexion/conexion.php";
 ?>
 <main class="container my-5">
-  <h1 class="text-center mb-4 fw-bold">Reglamento interno de la Defensoría del Pueblo</h1>
+  <h1 class="text-center mb-4">Reglamento interno de la Defensoría del Pueblo</h1>
+  <hr>
   <h4 class="text-center mb-4">Municipalidad del Partido de General Pueyrredon</h4>
 
   <!-- Imagen destacada -->

@@ -11,6 +11,7 @@
     define("CONTACTENOS","../Contactenos/FormContacto/contactenos.php");
     define("NOTICIAS","../Prensa/Noticias/noticias.php");
 
+    define("URL_ORDENANZAS", BASE_URL . "Secciones/Normativa/Ordenanzas/");
     session_start();
     function archivo_actual(){
         return basename($_SERVER['PHP_SELF']);

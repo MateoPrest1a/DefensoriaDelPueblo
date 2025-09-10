@@ -20,7 +20,7 @@ echo breadcrumbPersonalizado($breadcrumbNames);
               En el siguiente link, puede acceder a la Ordenanza Nº 26.185 con su texto ordenado.
             </p>
 
-            <a href="http://www.defensoriadelpueblo.mdp.gob.ar/wp-content/uploads/2015/05/DEFENSOR-DEL-PUEBLO-DEL-PARTIDO-DE-GENERAL-PUEYRREDON.pdf" class="btn btn-outline-primary" target="_blank">
+            <a href="<?= URL_ORDENANZAS."o26185.pdf?v=". date("YmdHis")?>" class="btn btn-outline-primary" target="_blank">
               <i class="bi bi-file-earmark-text me-2"></i> Ver Ordenanza Completa
             </a>
           </div>

@@ -12,6 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $comentario = $_POST["comentario"];
     $email = $_POST["email"];
 
+    // validacion de campos obligatorios que no sean vacios  que el mail sea uno valido que el telefono sea un numero
     $mail = new PHPMailer(true);
     try {
         // Configuracion SMTP

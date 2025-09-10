@@ -4,13 +4,15 @@ include('../../plantilla/head.php');
 
 <main>
     <div class="container py-5">
-        <h1 class="text-center mb-5">
+        <h1 class="text-center mb-5 fadeIn">
             Links de Interés
+            <hr class="mb-2 slideIn">
         </h1>
+        
 
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <div class="card shadow-sm border-0 mx-auto">
+                <div class="card shadow-sm border-0 mx-auto scroll-reveal">
                     <div class="card-body">
                         <h5 class="card-title text-uppercase fw-bold mb-3">
                             Presidencia de la Nación
@@ -21,7 +23,7 @@ include('../../plantilla/head.php');
                     </div>
                 </div>
                 <br>
-                <div class="card shadow-sm border-0 mx-auto">
+                <div class="card shadow-sm border-0 mx-auto scroll-reveal">
                     <div class="card-body">
                         <h5 class="card-title text-uppercase fw-bold mb-3">
                             Senadores de la Nación
@@ -32,7 +34,7 @@ include('../../plantilla/head.php');
                     </div>
                 </div>
                 <br>
-                <div class="card shadow-sm border-0 mx-auto">
+                <div class="card shadow-sm border-0 mx-auto scroll-reveal">
                     <div class="card-body">
                         <h5 class="card-title text-uppercase fw-bold mb-3">
                            Diputados de la Nación
@@ -43,7 +45,7 @@ include('../../plantilla/head.php');
                     </div>
                 </div>
                 <br>
-                 <div class="card shadow-sm border-0 mx-auto">
+                 <div class="card shadow-sm border-0 mx-auto scroll-reveal">
                     <div class="card-body">
                         <h5 class="card-title text-uppercase fw-bold mb-3">
                            Poder Judicial de la Nación
@@ -54,7 +56,7 @@ include('../../plantilla/head.php');
                     </div>
                 </div>
                 <br>
-                  <div class="card shadow-sm border-0 mx-auto">
+                  <div class="card shadow-sm border-0 mx-auto scroll-reveal">
                     <div class="card-body">
                         <h5 class="card-title text-uppercase fw-bold mb-3">
                            Defensoria del Pueblo la República Argentina
@@ -69,5 +71,24 @@ include('../../plantilla/head.php');
         </div>
     </div>
 </main>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const elementos = document.querySelectorAll(".scroll-reveal");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target); // opcional: solo una vez
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    elementos.forEach(el => observer.observe(el));
+  });
+</script>
 
 <?php include('../../plantilla/footer.php'); ?>

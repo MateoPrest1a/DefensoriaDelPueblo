@@ -10,8 +10,9 @@
     $resultado = mysqli_query($link, $sql);
 ?>
     <section class="container py-5">
-        <h1 class="display-1 mb-4">Preguntas Frecuentes</h1>
-            <div class="accordion" id="faqAccordion">
+        <h1 class="display-1 mb-4 text-center slideUpFade">Preguntas Frecuentes</h1>
+        <hr class="mb-4 slideIn">
+            <div class="accordion slideUpFade-1s" id="faqAccordion">
                 <?php
                     $index = 0;
                     while ($faq = mysqli_fetch_assoc($resultado)) {

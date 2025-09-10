@@ -19,7 +19,7 @@ echo breadcrumbPersonalizado($breadcrumbNames);
             <div class="card card-contacto">
                 <div class="card-body card-contacto-body">
                     <div class="row mb-4 tipo-formulario">
-                        <div class="col-12 col-md-6 mb-2 mb-md-0 text-center">
+                        <div class="col-12 col-md-6 mb-2 mb-md-0">
                             <button type="button" class="btn btn-toggle-form w-100 active" data-tipo="consulta">Consulta</button>                            
                         </div>
                         <div class="col-12 col-md-6 text-center">

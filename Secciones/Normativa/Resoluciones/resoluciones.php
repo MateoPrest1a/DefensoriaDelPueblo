@@ -49,7 +49,7 @@ $resultado = mysqli_query($link, $sql);
                   Resolución <?= htmlspecialchars($row['resolucion_id']) ?>/<?= htmlspecialchars($row['Anio']) ?>
                 </h5>
                 <p class="card-text"><?= htmlspecialchars($row['Titulo']) ?></p>
-                <a href="<?= htmlspecialchars($row['pdf']) ?>" class="btn btn-outline-primary" target="_blank">
+                <a href="<?= htmlspecialchars($row['pdf'])  ?>" class="btn btn-outline-primary" target="_blank">
                   <i class="bi bi-file-earmark-text me-2"></i> Ver Resolución Completa
                 </a>
               </div>

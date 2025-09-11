@@ -2,12 +2,16 @@
 include('../../../plantilla/head.php'); 
 include_once __DIR__ . "/../../../Conexion/conexion.php";
 include_once __DIR__ . '/../../../breadcrumbConfig.php'; 
-include_once __DIR__ . '/../../../breadcrumb.php'; 
+include_once __DIR__ . '/../../../breadcrumb.php';
+
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
-$sql = "SELECT * FROM noticias WHERE noticia_id = $id AND estado = 1";
-$resultado = mysqli_query($link, $sql);
-$noticia = mysqli_fetch_assoc($resultado);
+$sql = "SELECT * FROM noticias WHERE noticia_id = ? AND estado = 1";
+$stmt = $link->prepare($sql);
+$stmt->bind_param('i', $id);
+$stmt->execute();
+$resultado = $stmt->get_result();
+$noticia = $resultado->fetch_assoc();
 
 if (!$noticia) {
   echo "<div class='container py-5'><div class='alert alert-danger'>Noticia no encontrada.</div></div>";

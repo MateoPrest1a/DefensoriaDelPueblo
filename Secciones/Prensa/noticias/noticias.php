@@ -8,14 +8,27 @@ mysqli_set_charset($link, "utf8mb4");
 // Filtro por búsqueda
 $busqueda = isset($_GET['busqueda']) ? trim($_GET['busqueda']) : '';
 $condicion = "estado = 1";
+$params = [];
+$types = '';
 
-if ($busqueda !== '') {
-  $busqueda_sql = mysqli_real_escape_string($link, $busqueda);
-  $condicion .= " AND (titulo LIKE '%$busqueda_sql%' OR contenido LIKE '%$busqueda_sql%')";
-}
+$sql = "SELECT noticia_id, titulo, contenido, fecha_publicacion, foto FROM noticias WHERE $condicion";
 
-$sql = "SELECT noticia_id, titulo, contenido, fecha_publicacion, foto FROM noticias WHERE $condicion ORDER BY fecha_publicacion DESC";
-$resultado = mysqli_query($link, $sql);
+  if ($busqueda !== '') {
+    $sql .= " AND (titulo LIKE ? OR contenido LIKE ?)";
+    $busqueda_param = '%' . $busqueda . '%';
+    $params[] = $busqueda_param;
+    $params[] = $busqueda_param;
+    $types .= 'ss';
+  }
+
+$stmt = $link->prepare($sql);
+
+  if ($types) {
+    $stmt->bind_param($types, ...$params);
+  }
+
+$stmt->execute();
+$resultado = $stmt->get_result();
 ?>
 
 <section class="seccion-noticias container py-5">

@@ -19,8 +19,8 @@ $archivo = archivo_actual();
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark px-3">
     <a class="navbar-brand d-flex align-items-center" href="<?= BASE_URL ?>Secciones/Inicio/principal.php">
-      <img src="<?= BASE_URL ?>plantilla/LogoPNG.png" alt="Logo" style="height:90px; margin-right:10px; border-radius:50%">
-      <span class="fw-bold text-white"><?= TITULO ?></span>
+      <img src="<?= BASE_URL ?>plantilla/LogoPNG.png" alt="Logo" style="height:80px; margin-right:10px; border-radius:50%">
+      
     </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContenido" aria-controls="navbarContenido" aria-expanded="false" aria-label="Toggle navigation">

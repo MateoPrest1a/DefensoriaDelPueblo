@@ -6,13 +6,12 @@
     }
 </script>
 
-<?php
-include_once __DIR__ . '/../../../breadcrumbConfig.php';
-include_once __DIR__ . '/../../../breadcrumb.php';
-echo breadcrumbPersonalizado($breadcrumbNames);
-?>
-
-<div class="fondo-contactenos py-5">
+<div class="fondo-contactenos py-3">
+    <?php
+        include_once __DIR__ . '/../../../breadcrumbConfig.php';
+        include_once __DIR__ . '/../../../breadcrumb.php';
+        echo breadcrumbPersonalizado($breadcrumbNames);
+    ?>
     <div class="container-fluid">
         <div class="row-md-12">
             <h1 class="titulo-contacto">Contáctenos</h1>

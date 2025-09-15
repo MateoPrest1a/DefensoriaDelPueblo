@@ -90,7 +90,7 @@ main {
   position: relative;
   background-image: url('../../DefensoriaDelPueblo//Secciones/Inicio/images/portada.jpg'); /* ajustá la ruta si es necesario */
   background-size: cover;
-  background-position: center;
+  background-position: center 30%;
   background-repeat: no-repeat;
   height: 580px;
   display: flex;
@@ -121,7 +121,7 @@ main {
 .contenido-hero {
   position: relative;
   z-index: 2;
-  max-width: 900px;
+  max-width: 800px;
   padding: 40px;
   text-align: center;
   animation: fadeInDown 1.0s ease-out forwards;
@@ -1133,4 +1133,8 @@ hr{
   border-radius: 2px;
 }
 
-
+.btn.btn-resoluciones {
+  color: #003366 !important; /* texto */
+  background-color: #f0f0f0;  /* opcional, fondo */
+  border-color: #003366;      /* opcional, borde */
+}

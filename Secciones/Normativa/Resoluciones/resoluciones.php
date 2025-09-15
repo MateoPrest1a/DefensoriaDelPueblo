@@ -36,7 +36,7 @@ $resultado = mysqli_query($link, $sql);
           </option>
         <?php endwhile; ?>
       </select>
-      <button type="submit" class="btn btn-primary">Filtrar</button>
+      <button type="submit" class="btn btn-resoluciones">Filtrar</button>
     </form>
 
     <div class="row justify-content-center">
@@ -49,7 +49,7 @@ $resultado = mysqli_query($link, $sql);
                   Resolución <?= htmlspecialchars($row['resolucion_id']) ?>/<?= htmlspecialchars($row['Anio']) ?>
                 </h5>
                 <p class="card-text"><?= htmlspecialchars($row['Titulo']) ?></p>
-                <a href="<?= htmlspecialchars($row['pdf']) ?>" class="btn btn-outline-primary" target="_blank">
+                <a href="<?= htmlspecialchars($row['pdf'])  ?>" class="btn btn-outline-primary" target="_blank">
                   <i class="bi bi-file-earmark-text me-2"></i> Ver Resolución Completa
                 </a>
               </div>
@@ -62,5 +62,5 @@ $resultado = mysqli_query($link, $sql);
     </div>
   </div>
 </main>
-
 <?php include('../../../plantilla/footer.php'); ?>
+

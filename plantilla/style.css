@@ -1079,4 +1079,8 @@ hr{
   border-radius: 2px;
 }
 
-
+.btn.btn-resoluciones {
+  color: #003366 !important; /* texto */
+  background-color: #f0f0f0;  /* opcional, fondo */
+  border-color: #003366;      /* opcional, borde */
+}

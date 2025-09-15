@@ -36,7 +36,7 @@ $resultado = mysqli_query($link, $sql);
           </option>
         <?php endwhile; ?>
       </select>
-      <button type="submit" class="btn btn-primary">Filtrar</button>
+      <button type="submit" class="btn btn-resoluciones">Filtrar</button>
     </form>
 
     <div class="row justify-content-center">

@@ -7,6 +7,22 @@
 </script>
 
 <div class="fondo-contactenos py-3">
+        <!-- Modal de error -->
+        <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="errorModalLabel">Error en el formulario</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="errorModalBody">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     <?php
         include_once __DIR__ . '/../../../breadcrumbConfig.php';
         include_once __DIR__ . '/../../../breadcrumb.php';
@@ -32,7 +48,7 @@
                                 <input type="text" class="form-control" id="name" name="name">
                             </div>
                             <div class="col-12 col-md-6 mb-3">
-                                <label for="surename" class="form-label fs-4">Apellido<!--<span class="asterisco">*</span>--></label>
+                                <label for="surename" class="form-label fs-4">Apellido<span class="asterisco">*</span></label>
                                 <input type="text" class="form-control" id="surename" name="surename">
                             </div>
                         </div>
@@ -90,39 +106,88 @@ $(document).ready(function () {
     });
 
 
-  $("#demo-form").submit(function (e) {
-    e.preventDefault(); // Bloqueamos el envío por defecto
 
-    let camposObligatorios = tipoActual === "denuncia"
-      ? ["#name", "#telefono", "#email", "#comentario"]
-      : ["#name", "#email", "#comentario"];
+    $("#demo-form").submit(function (e) {
+        e.preventDefault(); // Bloqueamos el envío por defecto
 
-    let incompletos = [];
+            let camposObligatorios = tipoActual === "denuncia"
+                ? ["#name", "#surename", "#telefono", "#email", "#comentario"]
+                : ["#name", "#email", "#comentario"];
 
-    // Limpiar estilos previos
-    $("span.asterisco").css("opacity", "0").removeClass("animar-asterisco");
-    $("input, textarea").removeClass("campo-obligatorio");
+        let incompletos = [];
+        let errores = [];
 
-    camposObligatorios.forEach(function (selector) {
-      const campo = $(selector);
-      if (campo.val().trim() === "") {
-        incompletos.push(selector);
+        // Limpiar estilos previos
+        $("span.asterisco").css("opacity", "0").removeClass("animar-asterisco");
+        $("input, textarea").removeClass("campo-obligatorio");
 
-        // Mostrar asterisco con animación
-        const span = campo.closest(".mb-3, .col").find("span.asterisco");
-        void span[0].offsetWidth;
-        span.addClass("animar-asterisco").css("opacity", "1");
+        // Nombres legibles para los campos
+        const nombresCampos = {
+            "#name": "Nombre",
+            "#surename": "Apellido",
+            "#email": "Correo electrónico",
+            "#telefono": "Teléfono",
+            "#comentario": "Mensaje"
+        };
 
-        // Marcar borde rojo
-        campo.addClass("campo-obligatorio");
-      }
+        camposObligatorios.forEach(function (selector) {
+            const campo = $(selector);
+            if (campo.val().trim() === "") {
+                incompletos.push(nombresCampos[selector]);
+                // Mostrar asterisco con animación (más robusto)
+                let span = campo.siblings("span.asterisco");
+                if (span.length === 0) {
+                    span = campo.closest(".mb-3, .col").find("span.asterisco");
+                }
+                if (span.length > 0) {
+                    void span[0].offsetWidth;
+                    span.addClass("animar-asterisco").css("opacity", "1");
+                }
+                // Marcar borde rojo
+                campo.addClass("campo-obligatorio");
+            }
+        });
+
+        // Validaciones específicas
+        // Email
+        let email = $("#email").val().trim();
+            // Validación estricta de email: nombre@dominio.com
+            let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (email && !emailRegex.test(email)) {
+                errores.push("Ingrese un correo electrónico válido, por ejemplo: correo@valido.com");
+            }
+
+        // Mensaje mínimo 20 palabras
+        let comentario = $("#comentario").val().trim();
+        if (comentario && comentario.split(/\s+/).filter(Boolean).length < 20) {
+            errores.push("El mensaje debe tener al menos 20 palabras.");
+        }
+
+        // Teléfono: solo números y al menos 10 dígitos (solo si es denuncia)
+        let telefono = $("#telefono").val().trim();
+        if (tipoActual === "denuncia" && telefono) {
+            let telSoloNumeros = telefono.replace(/\D/g, "");
+            if (!/^\d{10,}$/.test(telSoloNumeros)) {
+                errores.push("El teléfono debe contener solo números y al menos 10 dígitos.");
+            }
+        }
+
+
+        // Si hay campos incompletos, mostrar error indicando cuáles faltan
+        if (incompletos.length > 0) {
+            errores.push("Por favor complete los siguientes campos obligatorios: " + incompletos.join(", ") + ".");
+        }
+
+        if (errores.length > 0) {
+            // Mostrar modal con errores
+            $("#errorModalBody").html(errores.map(e => `<div>${e}</div>`).join(""));
+            $("#errorModal").modal("show");
+            return;
+        }
+
+        // Si todo está correcto, enviar el formulario
+        this.submit();
     });
-
-    if (incompletos.length === 0) {
-      // Si todo está completo, enviamos el formulario manualmente
-      this.submit();
-    }
-  });
 
   // Limpieza en tiempo real
   $("#demo-form input, #demo-form textarea").on("input", function () {

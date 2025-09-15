@@ -13,6 +13,121 @@ include_once __DIR__ . "/../../../Conexion/conexion.php";
   <div class="text-center mb-4">
     <img src="../../../plantilla/imgs/logoReglamento.jpg" alt="Defensoría del Pueblo" class="img-fluid rounded shadow" style="max-height:180px;">
   </div>
+<!-- ÍNDICE ESTÉTICO -->
+<nav class="mb-5 p-3 border rounded shadow-sm bg-light">
+  <h2 class="h5 fw-bold mb-3 text-primary">Índice</h2>
+  <ul class="list-unstyled ms-0">
+    
+    <!-- TÍTULO I -->
+    <li class="mb-2">
+      <a href="#titulo1" class="fw-semibold text-blue text-decoration-none">TÍTULO I – Naturaleza y Fines</a>
+      <ul class="list-unstyled ms-3 mt-1">
+        <li><a href="#art1" class="text-secondary text-decoration-none">Artículo 1º</a></li>
+        <li><a href="#art2" class="text-secondary text-decoration-none">Artículo 2º</a></li>
+        <li><a href="#art3" class="text-secondary text-decoration-none">Artículo 3º</a></li>
+        <li><a href="#art4" class="text-secondary text-decoration-none">Artículo 4º</a></li>
+        <li><a href="#art5" class="text-secondary text-decoration-none">Artículo 5º</a></li>
+      </ul>
+    </li>
+
+    <!-- TÍTULO II -->
+    <li class="mb-2">
+      <a href="#titulo2" class="fw-semibold text-blue text-decoration-none">TÍTULO II – Del Trámite y Procedimiento</a>
+      <ul class="list-unstyled ms-3 mt-1">
+        <li><a href="#art6" class="text-secondary text-decoration-none">Artículo 6º</a></li>
+        <li><a href="#art7" class="text-secondary text-decoration-none">Artículo 7º</a></li>
+        <li><a href="#art8" class="text-secondary text-decoration-none">Artículo 8º</a></li>
+        <li><a href="#art9" class="text-secondary text-decoration-none">Artículo 9º</a></li>
+        <li><a href="#art10" class="text-secondary text-decoration-none">Artículo 10º</a></li>
+        <li><a href="#art11" class="text-secondary text-decoration-none">Artículo 11º</a></li>
+        <li><a href="#art12" class="text-secondary text-decoration-none">Artículo 12º</a></li>
+        <li><a href="#art13" class="text-secondary text-decoration-none">Artículo 13º</a></li>
+        <li><a href="#art14" class="text-secondary text-decoration-none">Artículo 14º</a></li>
+        <li><a href="#art15" class="text-secondary text-decoration-none">Artículo 15º</a></li>
+        <li><a href="#art16" class="text-secondary text-decoration-none">Artículo 16º</a></li>
+        <li><a href="#art17" class="text-secondary text-decoration-none">Artículo 17º</a></li>
+        <li><a href="#art18" class="text-secondary text-decoration-none">Artículo 18º</a></li>
+        <li><a href="#art19" class="text-secondary text-decoration-none">Artículo 19º</a></li>
+        <li><a href="#art20" class="text-secondary text-decoration-none">Artículo 20º</a></li>
+      </ul>
+    </li>
+
+    <!-- TÍTULO III -->
+    <li class="mb-2">
+      <a href="#prueba" class="fw-semibold text-blue text-decoration-none">PRUEBA</a>
+      <ul class="list-unstyled ms-3 mt-1">
+        <li><a href="#art21" class="text-secondary text-decoration-none">Artículo 21º</a></li>
+        <li><a href="#art22" class="text-secondary text-decoration-none">Artículo 22º</a></li>
+        <li><a href="#art23" class="text-secondary text-decoration-none">Artículo 23º</a></li>
+        <li><a href="#art24" class="text-secondary text-decoration-none">Artículo 24º</a></li>
+        <li><a href="#art25" class="text-secondary text-decoration-none">Artículo 25º</a></li>
+        <li><a href="#art26" class="text-secondary text-decoration-none">Artículo 26º</a></li>
+      </ul>
+    </li>
+
+    <!-- Potestad Disciplinaria -->
+    <li class="mb-2">
+      <a href="#potestad" class="fw-semibold text-blue text-decoration-none">Potestad Disciplinaria</a>
+      <ul class="list-unstyled ms-3 mt-1">
+        <li><a href="#art27" class="text-secondary text-decoration-none">Artículo 27º</a></li>
+        <li><a href="#art28" class="text-secondary text-decoration-none">Artículo 28º</a></li>
+        <li><a href="#art29" class="text-secondary text-decoration-none">Artículo 29º</a></li>
+      </ul>
+    </li>
+
+    <!-- Reconstrucción de Expedientes -->
+    <li class="mb-2">
+      <a href="#reconstruccion" class="fw-semibold text-blue text-decoration-none">Reconstrucción de Expedientes</a>
+      <ul class="list-unstyled ms-3 mt-1">
+        <li><a href="#art30" class="text-secondary text-decoration-none">Artículo 30º</a></li>
+        <li><a href="#art31" class="text-secondary text-decoration-none">Artículo 31º</a></li>
+        <li><a href="#art32" class="text-secondary text-decoration-none">Artículo 32º</a></li>
+        <li><a href="#art33" class="text-secondary text-decoration-none">Artículo 33º</a></li>
+        <li><a href="#art34" class="text-secondary text-decoration-none">Artículo 34º</a></li>
+        <li><a href="#art35" class="text-secondary text-decoration-none">Artículo 35º</a></li>
+      </ul>
+    </li>
+
+    <!-- Resoluciones y Notas -->
+    <li class="mb-2">
+      <a href="#resoluciones" class="fw-semibold text-blue text-decoration-none">Resoluciones y Notas</a>
+      <ul class="list-unstyled ms-3 mt-1">
+        <li><a href="#art36" class="text-secondary text-decoration-none">Artículo 36º</a></li>
+        <li><a href="#art37" class="text-secondary text-decoration-none">Artículo 37º</a></li>
+        <li><a href="#art38" class="text-secondary text-decoration-none">Artículo 38º</a></li>
+        <li><a href="#art39" class="text-secondary text-decoration-none">Artículo 39º</a></li>
+        <li><a href="#art40" class="text-secondary text-decoration-none">Artículo 40º</a></li>
+        <li><a href="#art41" class="text-secondary text-decoration-none">Artículo 41º</a></li>
+        <li><a href="#art42" class="text-secondary text-decoration-none">Artículo 42º</a></li>
+      </ul>
+    </li>
+
+    <!-- TÍTULO III – Incumplimiento de Solicitudes -->
+    <li class="mb-2">
+      <a href="#incumplimiento" class="fw-semibold text-blue text-decoration-none">TÍTULO III – Incumplimiento de Solicitudes</a>
+      <ul class="list-unstyled ms-3 mt-1">
+        <li><a href="#art43" class="text-secondary text-decoration-none">Artículo 43º</a></li>
+        <li><a href="#art44" class="text-secondary text-decoration-none">Artículo 44º</a></li>
+        <li><a href="#art45" class="text-secondary text-decoration-none">Artículo 45º</a></li>
+      </ul>
+    </li>
+
+    <!-- TÍTULO IV – Otras Disposiciones -->
+    <li class="mb-2">
+      <a href="#otras" class="fw-semibold text-blue text-decoration-none">TÍTULO IV – Otras Disposiciones</a>
+      <ul class="list-unstyled ms-3 mt-1">
+        <li><a href="#art46" class="text-secondary text-decoration-none">Artículo 46º</a></li>
+        <li><a href="#art47" class="text-secondary text-decoration-none">Artículo 47º</a></li>
+        <li><a href="#art48" class="text-secondary text-decoration-none">Artículo 48º</a></li>
+        <li><a href="#art49" class="text-secondary text-decoration-none">Artículo 49º</a></li>
+        <li><a href="#art50" class="text-secondary text-decoration-none">Artículo 50º</a></li>
+        <li><a href="#art51" class="text-secondary text-decoration-none">Artículo 51º</a></li>
+      </ul>
+    </li>
+
+  </ul>
+</nav>
+
   <!-- TÍTULO I -->
   <section id="titulo1" class="bg-light p-4 rounded shadow-sm mb-4">
     <h2 class="h5 fw-bold">TÍTULO I – NATURALEZA Y FINES</h2>

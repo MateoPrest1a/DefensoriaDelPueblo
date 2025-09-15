@@ -88,7 +88,7 @@ main {
 }
 .hero-defensoria {
   position: relative;
-  background-image: url('../../DefensoriaDelPueblo//Secciones/Inicio/images/portada.jpg'); /* ajustá la ruta si es necesario */
+  background-image: url('../../DefensoriaDelPueblo//Secciones/Inicio/images/portada.png'); /* ajustá la ruta si es necesario */
   background-size: cover;
   background-position: center 30%;
   background-repeat: no-repeat;

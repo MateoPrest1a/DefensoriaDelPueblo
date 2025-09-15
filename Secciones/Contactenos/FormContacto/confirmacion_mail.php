@@ -6,11 +6,41 @@ require 'PHPMailer-master/src/Exception.php';
 require 'PHPMailer-master/src/PHPMailer.php';
 require 'PHPMailer-master/src/SMTP.php';
 
+function validar_string($valor) {
+    return is_string($valor) && trim($valor) !== '';
+}
+
+function validar_email($email) {
+    return filter_var($email, FILTER_VALIDATE_EMAIL);
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nombre = $_POST["name"];
-    $apellido = $_POST["surename"];
-    $comentario = $_POST["comentario"];
-    $email = $_POST["email"];
+    $nombre = isset($_POST["name"]) ? trim($_POST["name"]) : '';
+    $apellido = isset($_POST["surename"]) ? trim($_POST["surename"]) : '';
+    $comentario = isset($_POST["comentario"]) ? trim($_POST["comentario"]) : '';
+    $email = isset($_POST["email"]) ? trim($_POST["email"]) : '';
+
+    $errores = [];
+
+    if (!validar_string($nombre)) {
+        $errores[] = "El nombre es obligatorio y debe ser texto.";
+    }
+    if (!validar_string($apellido)) {
+        $errores[] = "El apellido es obligatorio y debe ser texto.";
+    }
+    if (!validar_string($comentario)) {
+        $errores[] = "El mensaje es obligatorio y debe ser texto.";
+    }
+    if (!validar_email($email)) {
+        $errores[] = "El correo electrónico no es válido.";
+    }
+
+    if ($errores) {
+        foreach ($errores as $error) {
+            echo "<div class='alert alert-danger'>$error</div>";
+        }
+        exit;
+    }
 
     // validacion de campos obligatorios que no sean vacios  que el mail sea uno valido que el telefono sea un numero
     $mail = new PHPMailer(true);
@@ -29,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->setFrom('highlet.sample@gmail.com', 'Defensoria del Pueblo');
         $mail->addAddress($email);
         $mail->Subject = 'Defensoria del Pueblo';
-        $mail->Body = "Hola $nombre $apellido,\n\n Tu mensaje a sido recibido con exito, en menos de 72 horas hábiles recibiras una respuesta. Saludos";
+        $mail->Body = "Hola " . htmlspecialchars($nombre) . " " . htmlspecialchars($apellido) . ",\n\n Tu mensaje ha sido recibido con éxito, en menos de 72 horas hábiles recibirás una respuesta. Saludos";
 
         if ($mail->send()) {
             echo "Correo enviado correctamente.";

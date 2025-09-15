@@ -4,8 +4,9 @@
 include('../../plantilla/head.php');
 include_once __DIR__ . "/../../Conexion/conexion.php";
 
-$sqlCarrusel = "SELECT noticia_id, titulo, contenido, foto FROM noticias WHERE estado = 1 ORDER BY fecha_publicacion DESC LIMIT 5";
-$resultadoCarrusel = mysqli_query($link, $sqlCarrusel);
+$stmt = $link->prepare("SELECT noticia_id, titulo, contenido, foto FROM noticias WHERE estado = 1 ORDER BY fecha_publicacion DESC LIMIT 5");
+$stmt->execute();
+$resultadoCarrusel = $stmt->get_result();
 ?>
 
 <body>
@@ -57,8 +58,8 @@ $resultadoCarrusel = mysqli_query($link, $sqlCarrusel);
 
     <div class="slider-wrapper d-flex overflow-auto gap-4 pb-3" id="sliderWrapper">
       <?php
-      mysqli_data_seek($resultadoCarrusel, 0);
-      while ($noticia = mysqli_fetch_assoc($resultadoCarrusel)) {
+      $resultadoCarrusel->data_seek(0);
+      while ($noticia = $resultadoCarrusel->fetch_assoc()) {
         $foto = !empty($noticia['foto']) ? '/' . $noticia['foto'] : './images/default.jpg';
       ?>
         <div class="card flex-shrink-0" style="min-width: 300px; max-width: 300px;">

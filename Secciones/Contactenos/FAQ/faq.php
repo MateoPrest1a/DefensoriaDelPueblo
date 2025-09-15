@@ -6,8 +6,12 @@
     include_once __DIR__ . '/../../../breadcrumb.php'; 
     mysqli_set_charset($link, "utf8mb4");
 
-    $sql = "SELECT faq_id, pregunta, respuesta FROM faq WHERE estado = 1 ORDER BY faq_id ASC";
-    $resultado = mysqli_query($link, $sql);
+    $sql = "SELECT faq_id, pregunta, respuesta FROM faq WHERE estado = ?";
+    $stmt = $link->prepare($sql);
+    $estado = 1;
+    $stmt->bind_param('i', $estado);
+    $stmt->execute();
+    $resultado = $stmt->get_result();
 ?>
     <section class="container py-5">
         <h1 class="display-1 mb-4 text-center slideUpFade">Preguntas Frecuentes</h1>

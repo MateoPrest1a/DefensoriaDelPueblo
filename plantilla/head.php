@@ -19,7 +19,7 @@ $archivo = archivo_actual();
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark px-3">
     <a class="navbar-brand d-flex align-items-center" href="<?= BASE_URL ?>Secciones/Inicio/principal.php">
-      <img src="<?= BASE_URL ?>plantilla/LogoPNG.png" alt="Logo" style="height:80px; margin-right:10px; border-radius:50%">
+      <img src="<?= BASE_URL ?>plantilla/logo_nuevo.jpeg" alt="Logo" style="height:80px; margin-right:10px; border-radius:50%">
       
     </a>
 

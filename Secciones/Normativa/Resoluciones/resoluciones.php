@@ -62,5 +62,5 @@ $resultado = mysqli_query($link, $sql);
     </div>
   </div>
 </main>
-
 <?php include('../../../plantilla/footer.php'); ?>
+

@@ -336,6 +336,16 @@ footer a:hover {
   }
 }
 
+.lnkdn-profile{
+  color: white;
+  transition: 0.3s ease-in-out;
+}
+
+.lnkdn-profile:hover{
+  color: whitesmoke;
+  font-size: larger;
+}
+
 /* DROPDOWN */
 .dropdown {
   position: relative;

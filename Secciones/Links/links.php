@@ -4,7 +4,7 @@ include('../../plantilla/head.php');
 
 <main>
     <div class="container py-5">
-        <h1 class="text-center mb-5 fadeIn">
+        <h1 class="titulo-seccion anim-slide mb-4 text-center">
             Links de Interés
             <hr class="mb-2 slideIn">
         </h1>

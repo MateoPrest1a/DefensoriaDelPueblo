@@ -83,9 +83,8 @@
             </div>
         </div>
     </div>
+    <?php include('../../../plantilla/footer.php'); ?>
 </div>
-
-<?php include('../../../plantilla/footer.php'); ?>
 </body>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

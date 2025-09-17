@@ -383,15 +383,7 @@ footer a:hover {
 }
 
 .contenido-seccion h1,
-.titulo-seccion {
-  font-size: 2.5rem;
-  font-weight: 600;
-  text-align: center;
-  margin-bottom: 20px;
-  line-height: 1.2;
-  word-break: keep-all;
-  color: #003366;
-}
+
 
 .card-body p {
   font-size: 1.1rem;
@@ -555,8 +547,14 @@ footer a:hover {
 }
 
 .titulo-seccion {
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  font-weight: 800;
+  font-size: clamp(2.0rem, 4vw, 4rem);
+  font-weight: 600;
+  color: #003366;
+}
+.titulo-seccion-ordenanza {
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  font-weight: 600;
+  color: #003366;
 }
 
 .anim-fade-text {
@@ -975,6 +973,7 @@ hr{
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  
 }
 
 /* SECCION de FAQ */

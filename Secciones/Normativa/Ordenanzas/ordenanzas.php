@@ -2,13 +2,12 @@
 include('../../../plantilla/head.php'); 
 include_once __DIR__ . '/../../../breadcrumbConfig.php';
 include_once __DIR__ . '/../../../breadcrumb.php';
-echo breadcrumbPersonalizado($breadcrumbNames);
 ?>
 
 <main>
   <div class="container py-5">
     <div class="title mb-5">
-      <h1 class="text-center fadeIn">Ordenanza de creación de la Defensoría del Pueblo <hr class="mb-2 slideIn"></h1>
+      <h2 class="titulo-seccion-ordenanza anim-slide mb-4 text-center">Ordenanza de creación de la Defensoría del Pueblo <hr class="mb-2 slideIn"></h2>
     </div>
     
     <div class="row justify-content-center">

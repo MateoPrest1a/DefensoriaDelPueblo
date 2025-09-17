@@ -440,4 +440,16 @@ include_once __DIR__ . "/../../../Conexion/conexion.php";
 
   <!-- Footer include -->
 </main>
+  <div class="sticky-bottom">
+    <a href="#"><button class="btn-fixed"><i class="bi bi-arrow-up"></i></button></a>
+  </div>
+
+  <script>
+    document.querySelector('.btn-fixed').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+
 <?php include('../../../plantilla/footer.php'); ?>

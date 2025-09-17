@@ -6,6 +6,11 @@ require 'PHPMailer-master/src/Exception.php';
 require 'PHPMailer-master/src/PHPMailer.php';
 require 'PHPMailer-master/src/SMTP.php';
 
+include_once __DIR__ . "/../../../parametros.php";
+include_once __DIR__ . "/../../../Conexion/conexion.php";
+
+mysqli_select_db($link, DB);
+
 function validar_string($valor) {
     return is_string($valor) && trim($valor) !== '';
 }
@@ -28,6 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $comentario = isset($_POST["comentario"]) ? trim($_POST["comentario"]) : '';
         $email = isset($_POST["email"]) ? trim($_POST["email"]) : '';
         $telefono = isset($_POST["telefono"]) ? trim($_POST["telefono"]) : '';
+        $tipoFormulario = $_POST['tipo'] ?? 'consulta';
 
         $errores = [];
 
@@ -42,6 +48,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         if (!validar_email($email)) {
             $errores[] = "El correo electrónico no es válido.";
+        }
+
+        if ($tipoFormulario === 'denuncia' && !validar_string($telefono)) {
+            $errores[] = "El teléfono es obligatorio y debe ser texto.";
         }
 
         if ($errores) {
@@ -76,6 +86,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } catch (Exception $e) {
             echo "<div class='alert alert-danger'>Error al enviar el correo: {$mail->ErrorInfo}</div>";
         }
+        
+        // Guardar en la base de datos
+        $stmt = $link->prepare("INSERT INTO consultas (nombre, apellido, email, telefono, comentario, tipo) VALUES (?, ?, ?, ?, ?, ?)");
+
+        if ($stmt === false) {
+            echo "<div class='alert alert-danger'>Error al preparar la consulta: " . $link->error . "</div>";
+            exit;
+        }
+
+        $stmt->bind_param("ssssss", $nombre, $apellido, $email, $telefono, $comentario, $tipoFormulario);
+
+        if (!$stmt->execute()) {
+            echo "<div class='alert alert-danger'>Error al ejecutar la consulta: " . $stmt->error . "</div>";
+            $stmt->close();
+            exit;
+        }
+
+        $stmt->close();
 
     } else {
         echo "<div class='alert alert-danger'>No pudimos verificar que seas un usuario legítimo. Por favor intentá nuevamente.</div>";

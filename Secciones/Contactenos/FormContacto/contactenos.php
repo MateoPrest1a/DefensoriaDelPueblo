@@ -39,6 +39,7 @@
                     </div>
 
                     <form action="confirmacion_mail.php" method="post" id="demo-form">
+                        <input type="hidden" name="tipo" id="tipoFormulario" value="consulta">
                         <div class="row">
                             <div class="col-12 col-md-6 mb-3">
                                 <label for="name" class="form-label fs-4">Nombre<span class="asterisco">*</span></label>
@@ -91,9 +92,11 @@
 <script>
 $(document).ready(function () {
     let tipoActual = "consulta";
+    $("#tipoFormulario").val(tipoActual); // valor inicial
 
     $(".btn-toggle-form").click(function () {
         tipoActual = $(this).data("tipo");
+        $("#tipoFormulario").val(tipoActual); // actualiza el campo oculto
         $(".btn-toggle-form").removeClass("active");
         $(this).addClass("active");
         $("span.asterisco").css("opacity", "0").removeClass("animar-asterisco");

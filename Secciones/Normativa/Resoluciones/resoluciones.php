@@ -23,8 +23,9 @@ $resultado = mysqli_query($link, $sql);
 
 <main>
   <div class="container py-5">
-    <h1 class="text-center mb-4">Resoluciones de la Defensoría del Pueblo de la Municipalidad de General Pueyrredon</h1>
-
+    <h1 class="titulo-seccion-ordenanza anim-slide mb-4 text-center">Resoluciones de la Defensoría del Pueblo de la Municipalidad de General Pueyrredon</h1>
+    <hr class="mb-2 slideIn">
+    <br>
     <!-- Formulario de filtro -->
     <form method="GET" class="mb-4 text-center">
       <label for="anio" class="form-label fw-bold">Filtrar por Año:</label>

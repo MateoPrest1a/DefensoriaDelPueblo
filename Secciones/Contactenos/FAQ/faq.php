@@ -14,7 +14,7 @@
     $resultado = $stmt->get_result();
 ?>
     <section class="container py-5">
-        <h1 class="display-1 mb-4 text-center slideUpFade">Preguntas Frecuentes</h1>
+        <h1 class="titulo-seccion anim-slide mb-4 text-center">Preguntas Frecuentes</h1>
         <hr class="mb-4 slideIn">
             <div class="accordion slideUpFade-1s" id="faqAccordion">
                 <?php

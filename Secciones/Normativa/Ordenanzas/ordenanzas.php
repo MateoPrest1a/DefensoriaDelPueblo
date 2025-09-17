@@ -2,7 +2,6 @@
 include('../../../plantilla/head.php'); 
 include_once __DIR__ . '/../../../breadcrumbConfig.php';
 include_once __DIR__ . '/../../../breadcrumb.php';
-echo breadcrumbPersonalizado($breadcrumbNames);
 ?>
 
 <main>

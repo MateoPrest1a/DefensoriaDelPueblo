@@ -7,6 +7,10 @@ include_once __DIR__ . "/../../Conexion/conexion.php";
 $stmt = $link->prepare("SELECT noticia_id, titulo, contenido, foto FROM noticias WHERE estado = 1 ORDER BY fecha_publicacion DESC LIMIT 5");
 $stmt->execute();
 $resultadoCarrusel = $stmt->get_result();
+
+$stmtResenas = $link->prepare("SELECT DISTINCT resena_id, resena FROM resenas WHERE estado = 1 ORDER BY resena_id DESC LIMIT 10");
+$stmtResenas->execute();
+$resultadoResenas = $stmtResenas->get_result();
 ?>
 
 <body>
@@ -41,7 +45,31 @@ $resultadoCarrusel = $stmt->get_result();
     </a>
   </div>
   <br>
+
+  <section class="reseñas-carrusel container py-4">
+    <h2 class="fs-4 fw-bold text-black mb-3 text-center position-relative">
+        Reseñas de usuarios
+        <span class="decor-line"></span>
+    </h2>
+
+    <!-- Flechas -->
+    <button class="slider-btn prev-btn" onclick="document.getElementById('sliderResenas').scrollBy({left: -320, behavior: 'smooth'})">
+        <i class="bi bi-chevron-left"></i>
+    </button>
+    <button class="slider-btn next-btn" onclick="document.getElementById('sliderResenas').scrollBy({left: 320, behavior: 'smooth'})">
+        <i class="bi bi-chevron-right"></i>
+    </button>
+
+    <div class="slider-wrapper d-flex overflow-auto gap-3 pb-3" id="sliderResenas">
+        <?php while ($resena = $resultadoResenas->fetch_assoc()): ?>
+            <div class="card flex-shrink-0 p-3" style="min-width: 300px; max-width: 350px; height: auto;">
+                <p class="card-text mb-0"><?= htmlspecialchars($resena['resena']) ?></p>
+            </div>
+        <?php endwhile; ?>
+    </div>
+  </section>
   <br>
+
   <section class="slider-noticias container py-4 position-relative">
     <h2 class="fs-4 fw-bold text-black mb-3 position-relative">
       Últimas Noticias
@@ -81,6 +109,7 @@ $resultadoCarrusel = $stmt->get_result();
     $(document).ready(function() {
       $('.card').on('click', function() {
         const url = $(this).data('url');
+        if (!url) return;
         window.location.href = url;
       });
     });

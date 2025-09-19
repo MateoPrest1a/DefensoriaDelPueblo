@@ -250,6 +250,21 @@ main {
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
+/* CARRUSEL */
+.reseñas-carrusel .card {
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+.reseñas-carrusel .slider-wrapper::-webkit-scrollbar {
+    display: none; /* Oculta scrollbar */
+}
+
 /* IMAGEN DONDE ESTAMOS */
 
 

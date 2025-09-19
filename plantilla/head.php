@@ -67,6 +67,7 @@ $archivo = archivo_actual();
           <ul class="dropdown-menu dropdown-menu-end">
             <li><a class="dropdown-item" href="<?= BASE_URL ?>Secciones/Contactenos/FAQ/faq.php">Preguntas Frecuentes</a></li>
             <li><a class="dropdown-item" href="<?= BASE_URL ?>Secciones/Contactenos/FormContacto/contactenos.php">Formulario de Contacto</a></li>
+            <li><a class="dropdown-item" href="<?= BASE_URL ?>Secciones/Contactenos/Resenas/resenas.php">Reseña (BETA)</a></li>
           </ul>
         </li>
       </ul>

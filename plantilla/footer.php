@@ -26,10 +26,10 @@
           <!-- Redes -->
           <div class="col-md-4">
             <h6 class="fw-semibold mb-2">Seguinos</h6>
-            <a href="https://www.facebook.com/defensoriadelpueblomgp/?locale=es_LA" class="text-white fs-4 me-3 social-icon"><i class="bi bi-facebook"></i></a>
-            <a href="https://www.instagram.com/defensoriamgp/" class="text-white fs-4 me-3 social-icon"><i class="bi bi-instagram"></i></a>
-            <a href="https://wa.me/5492234996502" class="text-white fs-4 me-3 social-icon"><i class="bi bi-whatsapp"></i></a>
-            <a href="https://x.com/DefensorMGP" class="text-white fs-4 me-3 social-icon"> <i class="bi bi-twitter"></i></a>
+            <a href="https://www.facebook.com/defensoriadelpueblomgp/?locale=es_LA" class="text-white fs-4 me-3 social-icon" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/defensoriamgp/" class="text-white fs-4 me-3 social-icon" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="https://wa.me/5492234996502" class="text-white fs-4 me-3 social-icon" target="_blank"><i class="bi bi-whatsapp"></i></a>
+            <a href="https://x.com/DefensorMGP" class="text-white fs-4 me-3 social-icon" target="_blank"> <i class="bi bi-twitter"></i></a>
           </div>
         </div>
 

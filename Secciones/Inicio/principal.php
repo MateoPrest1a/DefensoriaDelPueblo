@@ -3,6 +3,7 @@
 <?php
 include('../../plantilla/head.php');
 include_once __DIR__ . "/../../Conexion/conexion.php";
+mysqli_set_charset($link, "utf8mb4");
 
 $stmt = $link->prepare("SELECT noticia_id, titulo, contenido, foto FROM noticias WHERE estado = 1 ORDER BY fecha_publicacion DESC LIMIT 5");
 $stmt->execute();

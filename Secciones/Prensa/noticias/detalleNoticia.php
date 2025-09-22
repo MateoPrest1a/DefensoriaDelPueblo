@@ -22,18 +22,37 @@ if (!$noticia) {
 
 <article class="container py-5">
   <div class="text-center mb-4">
-    <h1 class="fw-bold text-black"><?= htmlspecialchars($noticia['titulo']) ?></h1>
-    <p class="text-muted"><i class="bi bi-calendar-event me-1"></i><?= date("d/m/Y H:i", strtotime($noticia['fecha_publicacion'])) ?></p>
+    <h1 class="fw-bold text-black anim-slide"><?= htmlspecialchars($noticia['titulo']) ?></h1>
+    <p class="text-muted anim-slide"><i class="bi bi-calendar-event me-1"></i><?= date("d/m/Y H:i", strtotime($noticia['fecha_publicacion'])) ?></p>
   </div>
   <?php if (!empty($noticia['foto'])): ?>
-    <div class="mb-4 text-center">
+    <div class="mb-4 text-center anim-slide">
       <img src="/<?= $noticia['foto'] ?>" class="img-fluid rounded shadow-sm" alt="Imagen noticia" style="max-height: 450px; object-fit: cover;">
     </div>
   <?php endif; ?>
-  <div class="contenido fs-5 lh-lg px-3 px-md-5">
+  <div class="contenido fs-5 lh-lg px-3 px-md-5 text-center fade-on-scroll">
     <?= nl2br($noticia['contenido']) ?>
   </div>
 </article>
 
 <?php include('../../../plantilla/footer.php'); ?>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll('.fade-on-scroll');
+  const options = {
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target); // animar una sola vez
+      }
+    });
+  }, options);
+
+  elements.forEach(el => observer.observe(el));
+});
+</script>

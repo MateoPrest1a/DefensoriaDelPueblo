@@ -21,7 +21,7 @@ if (!$memoria) {
 
 <article class="container py-5">
   <div class="text-center mb-4">
-    <h1 class="fw-bold text-black"><?= htmlspecialchars($memoria['titulo']) ?></h1>
+    <h1 class="fw-bold text-black titulo-seccion-ordenanza anim-slide mb-4 text-center"><?= htmlspecialchars($memoria['titulo']) ?></h1>
     <?php if (!empty($memoria['sub_titulo'])): ?>
       <p class="text-muted"><?= htmlspecialchars($memoria['sub_titulo']) ?></p>
     <?php endif; ?>

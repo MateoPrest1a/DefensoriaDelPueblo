@@ -39,7 +39,7 @@ $resultadoResenas = $stmtResenas->get_result();
       <p>Mandanos tus inquietudes, quejas o sugerencias. Estamos para escucharte.</p>
     </div>
   </section>
-  <h2 class="text-center mb-4">¿Dónde estamos?</h2>
+  <h2 class="text-center mb-4 fade-on-scroll">¿Dónde estamos?</h2>
   <div class="map-container ms-2 text-center imagen-cuadro mb-2">
     <a href="https://www.google.com.ar/maps/place/Municipalidad+de+General+Pueyrredon/@-37.9976633,-57.5516251,16z/data=!3m1!4b1!4m6!3m5!1s0x9584dc03bb58eb2b:0xfc58db7e5aa0879f!8m2!3d-37.9976663!4d-57.5498044!16s%2Fg%2F1tdb0w9g?hl=es&entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
       <img src="./images/mapa.png" alt="Ubicación Municipalidad" class="img-fluid" style="max-height: 400px; object-fit: cover;">
@@ -47,7 +47,7 @@ $resultadoResenas = $stmtResenas->get_result();
   </div>
   <br>
 
-  <section class="reseñas-carrusel container py-4">
+  <section class="reseñas-carrusel container py-4 fade-on-scroll">
     <h2 class="fs-4 fw-bold text-black mb-3 text-center position-relative">
         Reseñas de usuarios
         <span class="decor-line"></span>
@@ -71,7 +71,7 @@ $resultadoResenas = $stmtResenas->get_result();
   </section>
   <br>
 
-  <section class="slider-noticias container py-4 position-relative">
+  <section class="slider-noticias container py-4 position-relative fade-on-scroll">
     <h2 class="fs-4 fw-bold text-black mb-3 position-relative">
       Últimas Noticias
       <span class="decor-line "></span>
@@ -127,7 +127,25 @@ $resultadoResenas = $stmtResenas->get_result();
       });
     });
   </script>
-  
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll('.fade-on-scroll');
+  const options = {
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target); // animar una sola vez
+      }
+    });
+  }, options);
+
+  elements.forEach(el => observer.observe(el));
+});
+</script>
 </body>
 
 </html>

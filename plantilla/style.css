@@ -287,6 +287,16 @@ footer p {
   margin-bottom: 8px;
 }
 
+.footer-p{
+  color: white;
+  text-decoration: none;
+}
+
+.footer-p a{
+  color: inherit;
+  text-decoration: none;
+}
+
 footer a.social-icon {
   color: #6FB1FC;
   transition: color 0.3s ease;

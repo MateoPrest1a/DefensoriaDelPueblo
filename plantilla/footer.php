@@ -18,9 +18,13 @@
           <!-- Contacto -->
           <div class="col-md-4 mb-4 mb-md-0">
             <h6 class="fw-semibold mb-2">Contacto</h6>
-            <p class="mb-1"><i class="bi bi-geo-alt-fill me-2"></i>Calle Belgrano Nº 2740 - Mar del Plata</p>
-            <p class="mb-1"><i class="bi bi-telephone-fill me-2"></i>(0223) 499-6502</p>
-            <p class="mb-0"><i class="bi bi-envelope-fill me-2"></i>defensoria@mardelplata.gov.ar</p>
+            <a href="https://www.google.com/maps/place/Honorable+Concejo+Deliberante+De+Gral.+Pueyrredon/@-37.9973848,-57.5522933,17z/data=!3m1!4b1!4m6!3m5!1s0x9584dc03a4dca779:0x20898d9dc7c03b41!8m2!3d-37.9973891!4d-57.5497184!16s%2Fg%2F11fxzm4vcf?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+              <p class="mb-1 footer-p"><i class="bi bi-geo-alt-fill me-2"></i>Calle Belgrano Nº 2740 - Mar del Plata</p>
+            </a>
+              <p class="mb-1 footer-p"><i class="bi bi-telephone-fill me-2"></i>(0223) 499-6502</p>
+            <a href="mailto:defensoria@mardelplata.gov.ar" target="_blank">
+              <p class="mb-0 footer-p"><i class="bi bi-envelope-fill me-2"></i>defensoria@mardelplata.gov.ar</p>
+            </a>
           </div>
 
           <!-- Redes -->

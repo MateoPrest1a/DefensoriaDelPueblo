@@ -40,6 +40,42 @@ $resultadoResenas = $stmtResenas->get_result();
       <p>Mandanos tus inquietudes, quejas o sugerencias. Estamos para escucharte.</p>
     </div>
   </section>
+
+  <section class="slider-noticias container py-4 position-relative fade-on-scroll">
+    <h2 class="fs-4 fw-bold text-black mb-3 position-relative">
+      Últimas Noticias
+      <span class="decor-line "></span>
+    </h2>
+    <br>
+    <!-- Flechas -->
+    <button class="slider-btn prev-btn" onclick="document.getElementById('sliderWrapper').scrollBy({left: -320, behavior: 'smooth'})">
+      <i class="bi bi-chevron-left"></i>
+    </button>
+    <button class="slider-btn next-btn" onclick="document.getElementById('sliderWrapper').scrollBy({left: 320, behavior: 'smooth'})">
+      <i class="bi bi-chevron-right"></i>
+    </button>
+
+    <div class="slider-wrapper d-flex overflow-auto gap-4 pb-3" id="sliderWrapper">
+      <?php
+      $resultadoCarrusel->data_seek(0);
+      while ($noticia = $resultadoCarrusel->fetch_assoc()) {
+        $foto = !empty($noticia['foto']) ? '/' . $noticia['foto'] : './images/default.jpg';
+      ?>
+        <div class="card-full flex-shrink-0" style="min-width: 300px; max-width: 300px;">
+          <div class="card-full-content">
+            <h1 class="card-full-title"><?= htmlspecialchars($noticia['titulo']) ?></h1>
+            <p class="card-full-copy"><?= substr(strip_tags($noticia['contenido']), 0, 100) ?>...</p>
+              <a href="../Prensa/noticias/detalleNoticia.php?id=<?= $noticia['noticia_id'] ?>" class="btn btn-sm btn-outline-primary mt-2 rounded-pill">
+                Ver más
+              </a>
+          </div>
+          <div class="card-full-image">
+            <img src="<?= $foto ?>" alt="<?= htmlspecialchars($noticia['titulo']) ?>" />
+          </div>
+        </div>
+      <?php } ?>
+  </section>
+  <br>
   <h2 class="text-center mb-4 fade-on-scroll">¿Dónde estamos?</h2>
   <div class="map-container ms-2 text-center imagen-cuadro mb-2">
     <a href="https://www.google.com.ar/maps/place/Municipalidad+de+General+Pueyrredon/@-37.9976633,-57.5516251,16z/data=!3m1!4b1!4m6!3m5!1s0x9584dc03bb58eb2b:0xfc58db7e5aa0879f!8m2!3d-37.9976663!4d-57.5498044!16s%2Fg%2F1tdb0w9g?hl=es&entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
@@ -76,41 +112,6 @@ $resultadoResenas = $stmtResenas->get_result();
 </div>
   </section>
   <br>
-
-  <section class="slider-noticias container py-4 position-relative fade-on-scroll">
-    <h2 class="fs-4 fw-bold text-black mb-3 position-relative">
-      Últimas Noticias
-      <span class="decor-line "></span>
-    </h2>
-    <br>
-    <!-- Flechas -->
-    <button class="slider-btn prev-btn" onclick="document.getElementById('sliderWrapper').scrollBy({left: -320, behavior: 'smooth'})">
-      <i class="bi bi-chevron-left"></i>
-    </button>
-    <button class="slider-btn next-btn" onclick="document.getElementById('sliderWrapper').scrollBy({left: 320, behavior: 'smooth'})">
-      <i class="bi bi-chevron-right"></i>
-    </button>
-
-    <div class="slider-wrapper d-flex overflow-auto gap-4 pb-3" id="sliderWrapper">
-      <?php
-      $resultadoCarrusel->data_seek(0);
-      while ($noticia = $resultadoCarrusel->fetch_assoc()) {
-        $foto = !empty($noticia['foto']) ? '/' . $noticia['foto'] : './images/default.jpg';
-      ?>
-        <div class="card-full flex-shrink-0" style="min-width: 300px; max-width: 300px;">
-          <div class="card-full-content">
-            <h1 class="card-full-title"><?= htmlspecialchars($noticia['titulo']) ?></h1>
-            <p class="card-full-copy"><?= substr(strip_tags($noticia['contenido']), 0, 100) ?>...</p>
-              <a href="../Prensa/noticias/detalleNoticia.php?id=<?= $noticia['noticia_id'] ?>" class="btn btn-sm btn-outline-primary mt-2 rounded-pill">
-                Ver más
-              </a>
-          </div>
-          <div class="card-full-image">
-            <img src="<?= $foto ?>" alt="<?= htmlspecialchars($noticia['titulo']) ?>" />
-          </div>
-        </div>
-      <?php } ?>
-  </section>
   <br>
   <?php include(FOOTER); ?>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

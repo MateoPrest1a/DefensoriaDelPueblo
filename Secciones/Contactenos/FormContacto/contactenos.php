@@ -3,7 +3,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/DefensoriaDelPueblo/parametros.php';
 include(HEADER);?>
 <script src="https://www.google.com/recaptcha/api.js?render=6LcIosorAAAAADP5WzkUOuZw9Ko_YKTjDWSRnbBB"></script>
 
-<div class="fondo-contactenos py-3">
+<div class="fondo-contactenos">
     <!-- Modal de error -->
     <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
         <div class="modal-dialog">

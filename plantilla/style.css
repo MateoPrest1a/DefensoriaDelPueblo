@@ -266,13 +266,26 @@ main {
 }
 
 .resena-card {
-  max-width: 600px;     /* ancho máximo */
-  max-height: 500px;    /* alto máximo */
-  min-width: 300px;     /* opcional, como tenías */
+  max-width: 800px;
+  min-height: 250px;
+  max-height: 700px;
+  min-width: 400px;
   height: auto;
-  overflow-wrap: break-word;  /* fuerza salto de palabra larga */
-  word-wrap: break-word;      /* compatibilidad */
-  word-break: break-word;     /* compatibilidad */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  position: relative;
+  background-color: rgb(254,250,251) !important;
+}
+
+.resena-img {
+    position: absolute;
+    bottom: 10px;  /* separa un poco del borde */
+    right: 10px;
+    width: 100px;
+    height: 100px;
+    object-fit: contain; /* ajusta sin deformar */
+    border-radius: 50%;
 }
 
 .resena-card .card-text {

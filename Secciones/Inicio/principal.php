@@ -62,12 +62,17 @@ $resultadoResenas = $stmtResenas->get_result();
     </button>
 
     <div class="slider-wrapper d-flex overflow-auto gap-3 pb-3" id="sliderResenas">
-        <?php while ($resena = $resultadoResenas->fetch_assoc()): ?>
-            <div class="card p-3 resena-card">
-                <p class="card-text mb-0"><?= htmlspecialchars($resena['resena']) ?></p>
-            </div>
-        <?php endwhile; ?>
-    </div>
+    <?php while ($resena = $resultadoResenas->fetch_assoc()): ?>
+        <?php            
+            $imgNum = rand(1, 8);            
+            $imgPath = "../../plantilla/imgs/personas/$imgNum.png";            
+        ?>
+        <div class="card p-3 resena-card position-relative">
+            <p class="card-text mb-0"><?= htmlspecialchars($resena['resena']) ?></p>
+            <img src="<?= $imgPath ?>" class="resena-img" alt="icono reseña">
+        </div>
+    <?php endwhile; ?>
+</div>
   </section>
   <br>
 

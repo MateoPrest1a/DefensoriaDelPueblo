@@ -40,7 +40,7 @@
         <hr class="border-top border-secondary mt-4">
         <p class="text-center mb-0 small text-secondary">© 2025 Defensoría del Pueblo. Todos los derechos reservados. </p>
         <p class="text-center mb-0 small text-secondary">Sitio desarrollado por <a href="https://www.linkedin.com/in/juan-cruz-manzo-1953b9364/" target="_blank" class="lnkdn-profile">Juan Cruz Manzo</a>, <a href="https://www.linkedin.com/in/mateo-pp/" target="_blank" class="lnkdn-profile">Mateo Prestia Pedernera</a> y <a href="https://www.linkedin.com/in/camila-ernaga-81163a339/" target="_blank" class="lnkdn-profile">Camila Ernaga.</a></p>
-        <p class="text-center mb-0 small text-secondary">El horario de atención es 8:00 a 13:30 hs de Lunes a Viernes</p>
+        <p class="text-center mb-0 small text-secondary">El horario de atención al público es 8:00 a 13:30 hs de Lunes a Viernes</p>
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>

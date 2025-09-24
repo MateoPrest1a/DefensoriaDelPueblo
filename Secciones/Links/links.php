@@ -1,5 +1,6 @@
 <?php
-include('../../plantilla/head.php');
+include_once $_SERVER['DOCUMENT_ROOT'] . '/DefensoriaDelPueblo/parametros.php';
+include(HEADER);
 ?>
 
 <main>
@@ -90,4 +91,4 @@ include('../../plantilla/head.php');
   });
 </script>
 
-<?php include('../../plantilla/footer.php'); ?>
+<?php include(FOOTER); ?>

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <?php
-include('../../plantilla/head.php');
-include_once __DIR__ . "/../../Conexion/conexion.php";
+include_once __DIR__ . '/../../parametros.php';
+include(HEADER);
+include(CONEXION);
 mysqli_set_charset($link, "utf8mb4");
 
 $stmt = $link->prepare("SELECT noticia_id, titulo, contenido, foto FROM noticias WHERE estado = 1 ORDER BY fecha_publicacion DESC LIMIT 5");
@@ -111,7 +112,7 @@ $resultadoResenas = $stmtResenas->get_result();
       <?php } ?>
   </section>
   <br>
-  <?php include('../../plantilla/footer.php'); ?>
+  <?php include(FOOTER); ?>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script>
     $(document).ready(function() {

@@ -6,8 +6,8 @@ require 'PHPMailer-master/src/Exception.php';
 require 'PHPMailer-master/src/PHPMailer.php';
 require 'PHPMailer-master/src/SMTP.php';
 
-include_once __DIR__ . "/../../../parametros.php";
-include_once __DIR__ . "/../../../Conexion/conexion.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . '/DefensoriaDelPueblo/parametros.php';
+include(HEADER);
 
 mysqli_select_db($link, DB);
 

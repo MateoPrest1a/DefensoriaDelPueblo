@@ -1,6 +1,8 @@
-<?php include('../../../plantilla/head.php'); ?>
-<?php include_once __DIR__ . '/../../../breadcrumbConfig.php'; ?>
-<?php include_once __DIR__ . '/../../../breadcrumb.php'; ?>
+<?php 
+include_once $_SERVER['DOCUMENT_ROOT'] . '/DefensoriaDelPueblo/parametros.php';
+include(HEADER);
+?>
+
 <main>
     <div class="container">
         <div class="row py-3">
@@ -29,8 +31,6 @@
         </div>
     </div>
 </main>
-
-    <?php include('../../../plantilla/footer.php'); ?>
-    
+<?php include(FOOTER); ?>    
 </body>
 </html>

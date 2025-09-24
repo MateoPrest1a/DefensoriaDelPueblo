@@ -1,4 +1,6 @@
-<?php include "../../../plantilla/head.php"; ?>
+<?php
+include_once $_SERVER['DOCUMENT_ROOT'] . '/DefensoriaDelPueblo/parametros.php';
+include(HEADER);?>
 <script src="https://www.google.com/recaptcha/api.js?render=6LcIosorAAAAADP5WzkUOuZw9Ko_YKTjDWSRnbBB"></script>
 
 <div class="fondo-contactenos py-3">
@@ -27,6 +29,8 @@
     <div class="container-fluid">
         <div class="row-md-12">
             <h1 class="titulo-contacto">Contáctenos</h1>
+            <p class="text-center mb-0 text-secondary">El horario de atención al público es 8:00 a 13:30 hs de Lunes a Viernes</p>
+            <br>
             <div class="card card-contacto">
                 <div class="card-body card-contacto-body">
                     <div class="row mb-4 tipo-formulario">
@@ -83,7 +87,7 @@
             </div>
         </div>
     </div>
-    <?php include('../../../plantilla/footer.php'); ?>
+    <?php include(FOOTER); ?>
 </div>
 </body>
 

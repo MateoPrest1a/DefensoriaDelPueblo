@@ -1,8 +1,7 @@
 <?php 
-include('../../../plantilla/head.php'); 
-include_once __DIR__ . "/../../../Conexion/conexion.php";
-include_once __DIR__ . '/../../../breadcrumbConfig.php'; 
-include_once __DIR__ . '/../../../breadcrumb.php'; 
+include_once $_SERVER['DOCUMENT_ROOT'] . '/DefensoriaDelPueblo/parametros.php';
+include(HEADER);
+include(CONEXION);
 mysqli_set_charset($link, "utf8mb4");
 
 $mensaje = "";
@@ -45,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 </section>
 
-<?php include('../../../plantilla/footer.php'); ?>
+<?php include(FOOTER); ?>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>

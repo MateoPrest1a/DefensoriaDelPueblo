@@ -265,6 +265,20 @@ main {
     display: none; /* Oculta scrollbar */
 }
 
+.resena-card {
+  max-width: 600px;     /* ancho máximo */
+  max-height: 500px;    /* alto máximo */
+  min-width: 300px;     /* opcional, como tenías */
+  height: auto;
+  overflow-wrap: break-word;  /* fuerza salto de palabra larga */
+  word-wrap: break-word;      /* compatibilidad */
+  word-break: break-word;     /* compatibilidad */
+}
+
+.resena-card .card-text {
+  overflow-wrap: break-word; /* asegúrate también en el texto */
+}
+
 /* IMAGEN DONDE ESTAMOS */
 
 /* SECCION PRINCIPAL NOTICIAS */

@@ -63,7 +63,7 @@ $resultadoResenas = $stmtResenas->get_result();
 
     <div class="slider-wrapper d-flex overflow-auto gap-3 pb-3" id="sliderResenas">
         <?php while ($resena = $resultadoResenas->fetch_assoc()): ?>
-            <div class="card flex-shrink-0 p-3" style="min-width: 300px; max-width: 350px; height: auto;">
+            <div class="card p-3 resena-card">
                 <p class="card-text mb-0"><?= htmlspecialchars($resena['resena']) ?></p>
             </div>
         <?php endwhile; ?>

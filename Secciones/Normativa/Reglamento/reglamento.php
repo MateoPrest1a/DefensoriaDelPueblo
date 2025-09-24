@@ -1,8 +1,6 @@
 <?php
-include('../../../plantilla/head.php');
-include_once __DIR__ . '/../../../breadcrumbConfig.php';
-include_once __DIR__ . '/../../../breadcrumb.php';
-include_once __DIR__ . "/../../../Conexion/conexion.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . '/DefensoriaDelPueblo/parametros.php';
+include(HEADER);
 ?>
 <main class="container my-5">
   <h1 class="titulo-seccion-ordenanza anim-slide mb-4 text-center">Reglamento interno de la Defensoría del Pueblo</h1>
@@ -452,4 +450,4 @@ include_once __DIR__ . "/../../../Conexion/conexion.php";
   </script>
 
 
-<?php include('../../../plantilla/footer.php'); ?>
+<?php include(FOOTER); ?>

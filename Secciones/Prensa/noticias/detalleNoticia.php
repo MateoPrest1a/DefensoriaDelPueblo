@@ -1,8 +1,7 @@
 <?php
-include('../../../plantilla/head.php'); 
-include_once __DIR__ . "/../../../Conexion/conexion.php";
-include_once __DIR__ . '/../../../breadcrumbConfig.php'; 
-include_once __DIR__ . '/../../../breadcrumb.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/DefensoriaDelPueblo/parametros.php';
+include(HEADER);
+include(CONEXION);
 mysqli_set_charset($link, "utf8mb4");
 
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
@@ -35,7 +34,7 @@ if (!$noticia) {
   </div>
 </article>
 
-<?php include('../../../plantilla/footer.php'); ?>
+<?php include(FOOTER); ?>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {

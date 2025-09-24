@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <?php
-include('../../plantilla/head.php');
-include_once __DIR__ . "/../../Conexion/conexion.php";
+include_once __DIR__ . '/../../parametros.php';
+include(HEADER);
+include(CONEXION);
 mysqli_set_charset($link, "utf8mb4");
 
 $stmt = $link->prepare("SELECT noticia_id, titulo, contenido, foto FROM noticias WHERE estado = 1 ORDER BY fecha_publicacion DESC LIMIT 5");

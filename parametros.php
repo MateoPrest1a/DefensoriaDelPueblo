@@ -10,7 +10,6 @@
     define("QUEHACEMOS","../Institucional/QueHacemos/queHacemos.php");
     define("CONTACTENOS","../Contactenos/FormContacto/contactenos.php");
     define("NOTICIAS","../Prensa/Noticias/noticias.php");
-    define("FOOTER", "../plantilla/footer.php");
 
 
 
@@ -28,9 +27,14 @@
     define("URL_LINKS", BASE_URL . "Secciones/Links/");
     define("URL_PRINCIPAL", BASE_URL . "Secciones/Inicio/principal.php");
     define("URL_LOGIN", BASE_URL . "Secciones/Login/login.php");
-    define("URL_LOGOUT", BASE_URL . "Secciones/Login/logout.php");    
+    define("URL_LOGOUT", BASE_URL . "Secciones/Login/logout.php");   
+
+    define('HEADER', $_SERVER['DOCUMENT_ROOT'] . '/DefensoriaDelPueblo/plantilla/head.php');
+    define("CONEXION", $_SERVER['DOCUMENT_ROOT'] . '/DefensoriaDelPueblo/Conexion/conexion.php');
+    define("FOOTER", $_SERVER['DOCUMENT_ROOT'] . '/DefensoriaDelPueblo/plantilla/footer.php');    
+    
     session_start();
     function archivo_actual(){
         return basename($_SERVER['PHP_SELF']);
     }
-?> 
+?>

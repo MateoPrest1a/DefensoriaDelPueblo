@@ -1092,36 +1092,168 @@ hr{
 .carousel-caption p {
   font-size: 0.95rem;
 }
+/* Contenedor de reseñas */
+.reseñas-carrusel {
+  position: relative; /* Para posicionar las flechas dentro del slider */
+  padding: 1rem 0;
+}
+
+/* Slider horizontal con scroll snap */
 .slider-wrapper {
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   overflow-x: scroll;
   scrollbar-width: none;
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
 }
+
+/* Ocultar scrollbar en Webkit */
 .slider-wrapper::-webkit-scrollbar {
   display: none; 
 }
 
+/* Cards del slider */
 .slider-wrapper .card {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  min-width: 300px;
+  max-width: 350px;
+  height: auto;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(20px) scale(1.02);
   animation: fadeInUp 0.6s ease forwards;
 }
 
+/* Animación escalonada para las primeras cards */
 .slider-wrapper .card:nth-child(1) { animation-delay: 0.1s; }
 .slider-wrapper .card:nth-child(2) { animation-delay: 0.2s; }
 .slider-wrapper .card:nth-child(3) { animation-delay: 0.3s; }
 
+/* Animación fadeInUp */
 @keyframes fadeInUp {
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1.02);
   }
 }
 
-.slider-wrapper{
-  transform: scale(1.02);
+/* Contenedor de reseñas */
+.reseñas-carrusel {
+  position: relative; /* Para posicionar las flechas dentro del slider */
+  padding: 1rem 2.5rem; /* espacio lateral para que las flechas no cubran las cards */
 }
+
+/* Slider horizontal con scroll snap */
+.slider-wrapper {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+/* Ocultar scrollbar en Webkit */
+.slider-wrapper::-webkit-scrollbar {
+  display: none; 
+}
+
+/* Cards del slider */
+.slider-wrapper .card {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  min-width: 300px;
+  max-width: 350px;
+  height: auto;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(20px) scale(1.02);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Animación escalonada para las primeras cards */
+.slider-wrapper .card:nth-child(1) { animation-delay: 0.1s; }
+.slider-wrapper .card:nth-child(2) { animation-delay: 0.2s; }
+.slider-wrapper .card:nth-child(3) { animation-delay: 0.3s; }
+
+/* Animación fadeInUp */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1.02);
+  }
+}
+
+/* Botones de flecha fuera de las cards */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.slider-btn:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+/* Posición fuera de las cards */
+.reseñas-carrusel .prev-btn {
+  left: 0; /* fuera del padding de la sección */
+}
+
+.reseñas-carrusel .next-btn {
+  right: 0; /* fuera del padding de la sección */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .reseñas-carrusel {
+    padding: 1rem 2rem;
+  }
+  .slider-wrapper .card {
+    min-width: 250px;
+    max-width: 280px;
+  }
+  .slider-btn {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reseñas-carrusel {
+    padding: 1rem 1.5rem;
+  }
+  .slider-wrapper .card {
+    min-width: 200px;
+    max-width: 220px;
+  }
+  .slider-btn {
+    width: 25px;
+    height: 25px;
+  }
+}
+
 
 .card:hover{
   transform: scale(1.02);
@@ -1176,7 +1308,7 @@ hr{
   position: absolute;
   bottom: -8px;
   left: 0;
-  width: 60px;
+  width: 100%;
   height: 3px;
   background-color: #003366;
   border-radius: 2px;

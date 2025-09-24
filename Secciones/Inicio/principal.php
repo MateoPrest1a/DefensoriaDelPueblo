@@ -74,9 +74,9 @@ $resultadoResenas = $stmtResenas->get_result();
   <section class="slider-noticias container py-4 position-relative">
     <h2 class="fs-4 fw-bold text-black mb-3 position-relative">
       Últimas Noticias
-      <span class="decor-line"></span>
+      <span class="decor-line "></span>
     </h2>
-
+    <br>
     <!-- Flechas -->
     <button class="slider-btn prev-btn" onclick="document.getElementById('sliderWrapper').scrollBy({left: -320, behavior: 'smooth'})">
       <i class="bi bi-chevron-left"></i>

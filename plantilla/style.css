@@ -265,6 +265,33 @@ main {
     display: none; /* Oculta scrollbar */
 }
 
+.resena-card {
+  max-width: 800px;
+  min-height: 250px;
+  max-height: 700px;
+  min-width: 400px;
+  height: auto;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  position: relative;
+  background-color: rgb(254,250,251) !important;
+}
+
+.resena-img {
+    position: absolute;
+    bottom: 10px;  /* separa un poco del borde */
+    right: 10px;
+    width: 100px;
+    height: 100px;
+    object-fit: contain; /* ajusta sin deformar */
+    border-radius: 50%;
+}
+
+.resena-card .card-text {
+  overflow-wrap: break-word; /* asegúrate también en el texto */
+}
+
 /* IMAGEN DONDE ESTAMOS */
 
 /* SECCION PRINCIPAL NOTICIAS */

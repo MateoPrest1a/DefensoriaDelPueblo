@@ -308,6 +308,7 @@ main {
 
 .resena-card .card-text {
   overflow-wrap: break-word;
+  padding-bottom: 80px;
 }
 
 /* IMAGEN DONDE ESTAMOS */

@@ -19,13 +19,6 @@ include(HEADER); ?>
             </div>
         </div>
     </div>
-
-    <?php
-    include_once __DIR__ . '/../../../breadcrumbConfig.php';
-    include_once __DIR__ . '/../../../breadcrumb.php';
-
-    ?>
-
     <div class="container-fluid">
         <div class="row-md-12">
             <h1 class="titulo-contacto">Contáctenos</h1>

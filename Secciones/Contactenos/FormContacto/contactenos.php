@@ -1,4 +1,6 @@
-<?php include "../../../plantilla/head.php"; ?>
+<?php
+include_once $_SERVER['DOCUMENT_ROOT'] . '/DefensoriaDelPueblo/parametros.php';
+include(HEADER);?>
 <script src="https://www.google.com/recaptcha/api.js?render=6LcIosorAAAAADP5WzkUOuZw9Ko_YKTjDWSRnbBB"></script>
 
 <div class="fondo-contactenos py-3">
@@ -85,7 +87,7 @@
             </div>
         </div>
     </div>
-    <?php include('../../../plantilla/footer.php'); ?>
+    <?php include(FOOTER); ?>
 </div>
 </body>
 

@@ -105,7 +105,7 @@ $resultadoResenas = $stmtResenas->get_result();
       <?php } ?>
   </section>
   <br>
-  <?php include('../../plantilla/footer.php'); ?>
+  <?php include(FOOTER); ?>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script>
     $(document).ready(function() {

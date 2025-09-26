@@ -31,6 +31,7 @@ include(HEADER);
         </div>
     </div>
 </main>
+<br>
 <?php include(FOOTER); ?>    
 </body>
 </html>

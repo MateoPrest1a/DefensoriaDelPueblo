@@ -19,6 +19,8 @@ $resultadoResenas = $stmtResenas->get_result();
   <section class="hero-defensoria">
     <div class="contenido-hero">
       <h1>Defensoría del Pueblo</h1>
+      <h2 class="subtitulo-institucional">Municipalidad de General Pueyrredon</h2>
+      <br>
       <p>
         Protegiendo tus derechos, escuchando tu voz. Conectate con nosotros para que tus inquietudes sean escuchadas.
         Esta es la página web de la Defensoría del Pueblo de la Municipalidad de General Pueyrredon.

@@ -87,8 +87,8 @@ include(HEADER);?>
             </div>
         </div>
     </div>
-    <?php include(FOOTER); ?>
 </div>
+<?php include(FOOTER); ?>
 </body>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

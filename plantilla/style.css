@@ -272,31 +272,50 @@ main {
     display: none; /* Oculta scrollbar */
 }
 
+/* Ventana del carrusel: fija el ancho visible y oculta el resto */
+.carrusel-wrapper {
+  max-width: 900px;       /* ancho visible del carrusel: ajusta a gusto */
+  margin: 0 auto;         /* centra en la página */
+  overflow: hidden;       /* oculta las cards que salen */
+  position: relative;
+}
+
+/* Track que se mueve horizontalmente */
+#sliderResenas {
+  display: flex;          /* importante para que las cards queden en fila */
+  will-change: transform; /* optimiza animación */
+  transition: none;       /* sin transiciones, solo transform */
+}
+
+/* Card de reseña */
 .resena-card {
+  flex: 0 0 400px;        /* ancho fijo para cálculos exactos */
   max-width: 800px;
   min-height: 250px;
   max-height: 700px;
-  min-width: 400px;
   height: auto;
   overflow-wrap: break-word;
   word-wrap: break-word;
   word-break: break-word;
   position: relative;
   background-color: rgb(254,250,251) !important;
+  margin-right: 12px;     /* espacio entre tarjetas */
 }
 
+/* Imagen dentro de la card */
 .resena-img {
-    position: absolute;
-    bottom: 10px;  /* separa un poco del borde */
-    right: 10px;
-    width: 100px;
-    height: 100px;
-    object-fit: contain; /* ajusta sin deformar */
-    border-radius: 50%;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 50%;     /* círculo, aunque no tenga fondo transparente */
 }
 
 .resena-card .card-text {
-  overflow-wrap: break-word; /* asegúrate también en el texto */
+  overflow-wrap: break-word;
+  padding-bottom: 80px;
 }
 
 /* IMAGEN DONDE ESTAMOS */
@@ -492,6 +511,7 @@ footer .text-secondary {
   position: relative;
   z-index: 10;
   font-family: 'Poppins', sans-serif;
+  background-color: #003366;
 }
 
 .flecha-pegada-footer a {

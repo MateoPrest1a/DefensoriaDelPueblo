@@ -42,42 +42,6 @@ $resultadoResenas = $stmtResenas->get_result();
       <p>Mandanos tus inquietudes, quejas o sugerencias. Estamos para escucharte.</p>
     </div>
   </section>
-  <h2 class="text-center mb-4 fade-on-scroll">¿Dónde estamos?</h2>
-  <div class="map-container ms-2 text-center imagen-cuadro mb-2">
-    <a href="https://www.google.com.ar/maps/place/Municipalidad+de+General+Pueyrredon/@-37.9976633,-57.5516251,16z/data=!3m1!4b1!4m6!3m5!1s0x9584dc03bb58eb2b:0xfc58db7e5aa0879f!8m2!3d-37.9976663!4d-57.5498044!16s%2Fg%2F1tdb0w9g?hl=es&entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-      <img src="./images/mapa.png" alt="Ubicación Municipalidad" class="img-fluid" style="max-height: 400px; object-fit: cover;">
-    </a>
-  </div>
-  <br>
-
-  <section class="reseñas-carrusel container py-4 fade-on-scroll">
-    <h2 class="fs-4 fw-bold text-black mb-3 text-center position-relative">
-        Reseñas de usuarios
-        <span class="decor-line"></span>
-    </h2>
-
-    <!-- Flechas -->
-    <button class="slider-btn prev-btn" onclick="document.getElementById('sliderResenas').scrollBy({left: -320, behavior: 'smooth'})">
-        <i class="bi bi-chevron-left"></i>
-    </button>
-    <button class="slider-btn next-btn" onclick="document.getElementById('sliderResenas').scrollBy({left: 320, behavior: 'smooth'})">
-        <i class="bi bi-chevron-right"></i>
-    </button>
-
-    <div class="slider-wrapper d-flex overflow-auto gap-3 pb-3" id="sliderResenas">
-    <?php while ($resena = $resultadoResenas->fetch_assoc()): ?>
-        <?php            
-            $imgNum = rand(1, 8);            
-            $imgPath = "../../plantilla/imgs/personas/$imgNum.png";            
-        ?>
-        <div class="card p-3 resena-card position-relative">
-            <p class="card-text mb-0"><?= htmlspecialchars($resena['resena']) ?></p>
-            <img src="<?= $imgPath ?>" class="resena-img" alt="icono reseña">
-        </div>
-    <?php endwhile; ?>
-</div>
-  </section>
-  <br>
 
   <section class="slider-noticias container py-4 position-relative fade-on-scroll">
     <h2 class="fs-4 fw-bold text-black mb-3 position-relative">
@@ -113,10 +77,62 @@ $resultadoResenas = $stmtResenas->get_result();
         </div>
       <?php } ?>
   </section>
+    <br>
+    <h2 class="text-center mb-5 fade-on-scroll">¿Dónde estamos?</h2>
+    <div class="map-container ms-2 text-center imagen-cuadro mb-2">
+      <a href="https://www.google.com.ar/maps/place/Municipalidad+de+General+Pueyrredon/@-37.9976633,-57.5516251,16z/data=!3m1!4b1!4m6!3m5!1s0x9584dc03bb58eb2b:0xfc58db7e5aa0879f!8m2!3d-37.9976663!4d-57.5498044!16s%2Fg%2F1tdb0w9g?hl=es&entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+        <img src="./images/mapa.png" alt="Ubicación Municipalidad" class="img-fluid" style="max-height: 400px; object-fit: cover;">
+      </a>
+    </div>
+  
+  <section class="reseñas-carrusel container py-4 fade-on-scroll">
+    <h2 class="fs-4 fw-bold text-black mb-3 text-center position-relative">
+        Reseñas de usuarios
+        <span class="decor-line"></span>
+    </h2>
+
+    <!-- Flechas -->
+    <button class="slider-btn prev-btn"
+            onclick="document.getElementById('sliderResenas').scrollBy({left: -320, behavior: 'smooth'})">
+        <i class="bi bi-chevron-left"></i>
+    </button>
+    <button class="slider-btn next-btn"
+            onclick="document.getElementById('sliderResenas').scrollBy({left: 320, behavior: 'smooth'})">
+        <i class="bi bi-chevron-right"></i>
+    </button>    
+
+    <?php    
+        $numeros = range(1, 8);
+        shuffle($numeros);
+        $pos = 0;
+    ?>
+
+    <div class="slider-wrapper d-flex overflow-auto gap-3 pb-3 mt-3" id="sliderResenas">
+        <?php while ($resena = $resultadoResenas->fetch_assoc()): ?>
+            <?php
+                // Si se agotaron los 8 números, vuelve a mezclarlos para el siguiente grupo
+                if ($pos >= count($numeros)) {
+                    $numeros = range(1, 8);
+                    shuffle($numeros);
+                    $pos = 0;
+                }
+                $imgNum  = $numeros[$pos];
+                $pos++;
+                $imgPath = "../../plantilla/imgs/personas/$imgNum.png";
+            ?>
+            <div class="card p-3 resena-card position-relative">
+                <p class="card-text mb-0"><?= htmlspecialchars($resena['resena']) ?></p>
+                <img src="<?= $imgPath ?>" class="resena-img" alt="icono reseña">
+            </div>
+        <?php endwhile; ?>
+    </div>
+</section>
+  <br>
   <br>
   <?php include(FOOTER); ?>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script>
+    //Script
     $(document).ready(function() {
       $('.card').on('click', function() {
         const url = $(this).data('url');

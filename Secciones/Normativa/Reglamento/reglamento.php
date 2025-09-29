@@ -439,15 +439,14 @@ include(HEADER);
   <!-- Footer include -->
 </main>
   <div class="sticky-bottom">
-    <a href="#"><button class="btn-fixed"><i class="bi bi-arrow-up"></i></button></a>
+    <button class="btn-fixed"><i class="bi bi-arrow-up"></i></button>
   </div>
 
-  <script>
+  <?php include(FOOTER); ?>
+</body>
+<script>
     document.querySelector('.btn-fixed').addEventListener('click', function(e) {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-  </script>
-
-
-<?php include(FOOTER); ?>
+</script>

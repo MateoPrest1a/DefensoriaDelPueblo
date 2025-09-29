@@ -1217,6 +1217,13 @@ hr{
   
 }
 
+.sticky-bottom{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
 /* SECCION de FAQ */
 
 .slideIn{

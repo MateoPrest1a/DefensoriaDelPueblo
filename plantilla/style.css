@@ -2,6 +2,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 body {
@@ -248,6 +249,30 @@ main {
 .card-seccion-principal:active{
   transform: translateY(1px) scale(0.99);
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.card-full-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+.card-full-link:hover .card-full {
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transform: scale(1.01);
+  transition: all 0.2s ease-in-out;
+}
+
+.ver-mas-btn {
+  border-color: #007bff;
+  color: #007bff;
+  font-weight: 500;
+  padding: 6px 12px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.ver-mas-btn:hover {
+  background-color: #007bff;
+  color: #fff;
 }
 
 /* CARRUSEL */

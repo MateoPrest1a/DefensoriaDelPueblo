@@ -61,18 +61,19 @@ $resultadoResenas = $stmtResenas->get_result();
       while ($noticia = $resultadoCarrusel->fetch_assoc()) {
         $foto = !empty($noticia['foto']) ? '/' . $noticia['foto'] : './images/default.jpg';
       ?>
-        <div class="card-full flex-shrink-0" style="min-width: 300px; max-width: 300px;">
-          <div class="card-full-content">
-            <h1 class="card-full-title"><?= htmlspecialchars($noticia['titulo']) ?></h1>
-            <p class="card-full-copy"><?= substr(strip_tags($noticia['contenido']), 0, 100) ?>...</p>
-              <a href="../Prensa/noticias/detalleNoticia.php?id=<?= $noticia['noticia_id'] ?>" class="btn btn-sm btn-outline-primary mt-2 rounded-pill">
-                Ver más
-              </a>
+        <a href="../Prensa/noticias/detalleNoticia.php?id=<?= $noticia['noticia_id'] ?>" class="card-full-link">
+          <div class="card-full flex-shrink-0" style="min-width: 300px; max-width: 300px;">
+            <div class="card-full-content">
+              <h1 class="card-full-title"><?= htmlspecialchars($noticia['titulo']) ?></h1>
+              <p class="card-full-copy"><?= substr(strip_tags($noticia['contenido']), 0, 100) ?>...</p>
+              <span class="btn btn-sm btn-outline-primary mt-2 rounded-pill ver-mas-btn">Ver más</span>
+            </div>
+            <div class="card-full-image">
+              <img src="<?= $foto ?>" alt="<?= htmlspecialchars($noticia['titulo']) ?>" />
+            </div>
           </div>
-          <div class="card-full-image">
-            <img src="<?= $foto ?>" alt="<?= htmlspecialchars($noticia['titulo']) ?>" />
-          </div>
-        </div>
+        </a>
+
       <?php } ?>
   </section>
     <br>

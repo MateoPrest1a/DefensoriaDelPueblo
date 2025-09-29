@@ -64,7 +64,7 @@ $resultado = $stmt->get_result();
                 <div class="share-icons">
                   <a href="https://www.facebook.com/sharer/sharer.php?u=https://tusitio.com/detalleNoticia.php?id=<?= $noticia['noticia_id'] ?>" target="_blank" class="text-primary me-2"><i class="bi bi-facebook"></i></a>
                   <a href="https://api.whatsapp.com/send?text=https://tusitio.com/detalleNoticia.php?id=<?= $noticia['noticia_id'] ?>" target="_blank" class="text-success me-2"><i class="bi bi-whatsapp"></i></a>
-                  <a href="https://www.instagram.com/" target="_blank" class="text-danger"><i class="bi bi-instagram"></i></a>
+                  <a href="https://twitter.com/intent/tweet?text=https://tusitio.com/detalleNoticia.php?id=<?= $noticia['noticia_id']?>" rel="noopener noreferrer" target="_blank" class="text-secondary"><i class="bi bi-twitter-x"></i></a>
                 </div>
               </div>
             </div>

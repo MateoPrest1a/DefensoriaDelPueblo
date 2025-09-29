@@ -1,5 +1,6 @@
 <?php 
-    define('BASE_URL','/DefensoriaDelPueblo/');
+    define('BASE_URL','http://localhost/DefensoriaDelPueblo/');
+    
 
     define("HOST","localhost");
     define("USER","root");

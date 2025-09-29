@@ -9,11 +9,38 @@ $archivo = archivo_actual();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="../plantilla/iconos/ms-icon-144x144.png">
+  <meta name="theme-color" content="#0056b3">
+
   <title><?= TITULO ?></title>
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="<?= BASE_URL ?>plantilla/style.css">
-  <link rel="icon" href="../plantilla/logoPNG.png" type="image/png">
+
+  <link rel="icon" href="http://localhost/DefensoriaDelPueblo/plantilla/iconos/favicon.ico" type="image/x-icon">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../plantilla/iconos/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../plantilla/iconos/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../plantilla/iconos/favicon-96x96.png">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="../plantilla/iconos/apple-icon.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../plantilla/iconos/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../plantilla/iconos/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../plantilla/iconos/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../plantilla/iconos/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../plantilla/iconos/apple-icon-180x180.png">
+
+  <link rel="icon" type="image/png" sizes="192x192" href="../plantilla/iconos/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="144x144" href="../plantilla/iconos/android-icon-144x144.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../plantilla/iconos/android-icon-96x96.png">
+  <link rel="icon" type="image/png" sizes="72x72" href="../plantilla/iconos/android-icon-72x72.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="../plantilla/iconos/android-icon-48x48.png">
+  <link rel="icon" type="image/png" sizes="36x36" href="../plantilla/iconos/android-icon-36x36.png">
+
+  <link rel="manifest" href="../plantilla/iconos/manifest.json">
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 

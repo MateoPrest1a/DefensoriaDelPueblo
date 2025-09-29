@@ -432,22 +432,23 @@ include(HEADER);
 
     <article id="art51" class="mt-3">
       <h6 class="fw-bold">Artículo 51º</h6>
-      <p>Se ratifican las facultades y funciones no enumeradas que surgen conforme al artículo 13º inciso h) de la Ordenanza, facultando a los Defensores del Pueblo para ejercer las que resulten convenientes al mejor desempeño y se ratifica la legitimación procesal del organismo.</p>
+      <p>Se ratifican las facultades y funciones no enumeradas que surgen conforme al artículo 13º inciso h de la Ordenanza, facultando a los Defensores del Pueblo para ejercer las que resulten convenientes al mejor desempeño y se ratifica la legitimación procesal del organismo.</p>
     </article>
   </section>
 
   <!-- Footer include -->
 </main>
+
   <div class="sticky-bottom">
-    <a href="#"><button class="btn-fixed"><i class="bi bi-arrow-up"></i></button></a>
+    <button class="btn-fixed"><i class="bi bi-arrow-up"></i></button>
   </div>
 
+  <?php include(FOOTER); ?>
   <script>
     document.querySelector('.btn-fixed').addEventListener('click', function(e) {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
+</body>
 
-
-<?php include(FOOTER); ?>

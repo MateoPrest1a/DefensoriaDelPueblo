@@ -2,6 +2,7 @@
 include_once $_SERVER['DOCUMENT_ROOT'] . '/DefensoriaDelPueblo/parametros.php';
 include(HEADER);
 include(CONEXION);
+mysqli_set_charset($link, "utf8mb4");
 
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 

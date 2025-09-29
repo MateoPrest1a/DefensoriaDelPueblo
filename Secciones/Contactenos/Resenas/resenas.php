@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <textarea class="form-control" id="resena" name="resena" rows="6" placeholder="Escribe tu reseña aquí..."></textarea>
                 </div>
                 <div class="text-center">
-                    <button type="submit" class="btn btn-primary px-5">Enviar</button>
+                    <button type="submit" class="btn-contacto">Enviar</button>
                 </div>
             </form>
         </div>

@@ -1,9 +1,9 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . '/DefensoriaDelPueblo/parametros.php';
-include(HEADER);?>
+include(HEADER); ?>
 <script src="https://www.google.com/recaptcha/api.js?render=6LcIosorAAAAADP5WzkUOuZw9Ko_YKTjDWSRnbBB"></script>
 
-<div class="fondo-contactenos py-3">
+<div class="fondo-contactenos">
     <!-- Modal de error -->
     <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -19,13 +19,6 @@ include(HEADER);?>
             </div>
         </div>
     </div>
-
-    <?php
-        include_once __DIR__ . '/../../../breadcrumbConfig.php';
-        include_once __DIR__ . '/../../../breadcrumb.php';
-
-    ?>
-
     <div class="container-fluid">
         <div class="row-md-12">
             <h1 class="titulo-contacto">Contáctenos</h1>
@@ -34,10 +27,13 @@ include(HEADER);?>
             <div class="card card-contacto">
                 <div class="card-body card-contacto-body">
                     <div class="row mb-4 tipo-formulario">
+                        <p class="text-center mb-0 small text-secondary">Elija el tipo de solicitud que quiere hacer:</p>
                         <div class="col-12 col-md-6 mb-2 mb-md-0">
+                            <br>
                             <button type="button" class="btn btn-toggle-form w-100 active" data-tipo="consulta">Consulta</button>
                         </div>
-                        <div class="col-12 col-md-6 text-center">
+                        <div class="col-12 col-md-6 mb-2 mb-md-0">
+                            <br>
                             <button type="button" class="btn btn-toggle-form w-100" data-tipo="denuncia">Denuncia</button>
                         </div>
                     </div>
@@ -93,101 +89,104 @@ include(HEADER);?>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-$(document).ready(function () {
-    let tipoActual = "consulta";
-    $("#tipoFormulario").val(tipoActual); // valor inicial
+    $(document).ready(function() {
+        let tipoActual = "consulta";
+        $("#tipoFormulario").val(tipoActual); // valor inicial
 
-    $(".btn-toggle-form").click(function () {
-        tipoActual = $(this).data("tipo");
-        $("#tipoFormulario").val(tipoActual); // actualiza el campo oculto
-        $(".btn-toggle-form").removeClass("active");
-        $(this).addClass("active");
-        $("span.asterisco").css("opacity", "0").removeClass("animar-asterisco");
-        $("input, textarea").removeClass("campo-obligatorio");
-    });
-
-    $("#demo-form").submit(function (e) {
-        e.preventDefault();
-
-        let camposObligatorios = tipoActual === "denuncia"
-            ? ["#name", "#surename", "#telefono", "#email", "#comentario"]
-            : ["#name", "#email", "#comentario"];
-
-        let incompletos = [];
-        let errores = [];
-
-        $("span.asterisco").css("opacity", "0").removeClass("animar-asterisco");
-        $("input, textarea").removeClass("campo-obligatorio");
-
-        const nombresCampos = {
-            "#name": "Nombre",
-            "#surename": "Apellido",
-            "#email": "Correo electrónico",
-            "#telefono": "Teléfono",
-            "#comentario": "Mensaje"
-        };
-
-        camposObligatorios.forEach(function (selector) {
-            const campo = $(selector);
-            if (campo.val().trim() === "") {
-                incompletos.push(nombresCampos[selector]);
-                let span = campo.siblings("span.asterisco");
-                if (span.length === 0) {
-                    span = campo.closest(".mb-3, .col").find("span.asterisco");
-                }
-                if (span.length > 0) {
-                    void span[0].offsetWidth;
-                    span.addClass("animar-asterisco").css("opacity", "1");
-                }
-                campo.addClass("campo-obligatorio");
-            }
+        $(".btn-toggle-form").click(function() {
+            tipoActual = $(this).data("tipo");
+            $("#tipoFormulario").val(tipoActual); // actualiza el campo oculto
+            $(".btn-toggle-form").removeClass("active");
+            $(this).addClass("active");
+            $("span.asterisco").css("opacity", "0").removeClass("animar-asterisco");
+            $("input, textarea").removeClass("campo-obligatorio");
         });
 
-        let email = $("#email").val().trim();
-        let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        if (email && !emailRegex.test(email)) {
-            errores.push("Ingrese un correo electrónico válido, por ejemplo: correo@valido.com");
-        }
+        $("#demo-form").submit(function(e) {
+            e.preventDefault();
 
-        let comentario = $("#comentario").val().trim();
-        if (comentario && comentario.split(/\s+/).filter(Boolean).length < 20) {
-            errores.push("El mensaje debe tener al menos 20 palabras.");
-        }
+            let camposObligatorios = tipoActual === "denuncia" ?
+                ["#name", "#surename", "#telefono", "#email", "#comentario"] :
+                ["#name", "#email", "#comentario"];
 
-        let telefono = $("#telefono").val().trim();
-        if (tipoActual === "denuncia" && telefono) {
-            let telSoloNumeros = telefono.replace(/\D/g, "");
-            if (!/^\d{10,}$/.test(telSoloNumeros)) {
-                errores.push("El teléfono debe contener solo números y al menos 10 dígitos.");
+            let incompletos = [];
+            let errores = [];
+
+            $("span.asterisco").css("opacity", "0").removeClass("animar-asterisco");
+            $("input, textarea").removeClass("campo-obligatorio");
+
+            const nombresCampos = {
+                "#name": "Nombre",
+                "#surename": "Apellido",
+                "#email": "Correo electrónico",
+                "#telefono": "Teléfono",
+                "#comentario": "Mensaje"
+            };
+
+            camposObligatorios.forEach(function(selector) {
+                const campo = $(selector);
+                if (campo.val().trim() === "") {
+                    incompletos.push(nombresCampos[selector]);
+                    let span = campo.siblings("span.asterisco");
+                    if (span.length === 0) {
+                        span = campo.closest(".mb-3, .col").find("span.asterisco");
+                    }
+                    if (span.length > 0) {
+                        void span[0].offsetWidth;
+                        span.addClass("animar-asterisco").css("opacity", "1");
+                    }
+                    campo.addClass("campo-obligatorio");
+                }
+            });
+
+            let email = $("#email").val().trim();
+            let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (email && !emailRegex.test(email)) {
+                errores.push("Ingrese un correo electrónico válido, por ejemplo: correo@valido.com");
             }
-        }
 
-        if (incompletos.length > 0) {
-            errores.push("Por favor complete los siguientes campos obligatorios: " + incompletos.join(", ") + ".");
-        }
+            let comentario = $("#comentario").val().trim();
+            if (comentario && comentario.split(/\s+/).filter(Boolean).length < 20) {
+                errores.push("El mensaje debe tener al menos 20 palabras.");
+            }
 
-        if (errores.length > 0) {
-            $("#errorModalBody").html(errores.map(e => `<div>${e}</div>`).join(""));
-            $("#errorModal").modal("show");
-            return;
-        }
+            let telefono = $("#telefono").val().trim();
+            if (tipoActual === "denuncia" && telefono) {
+                let telSoloNumeros = telefono.replace(/\D/g, "");
+                if (!/^\d{10,}$/.test(telSoloNumeros)) {
+                    errores.push("El teléfono debe contener solo números y al menos 10 dígitos.");
+                }
+            }
 
-        // Ejecutar reCAPTCHA justo antes de enviar
-        grecaptcha.ready(function () {
-            grecaptcha.execute('6LcIosorAAAAADP5WzkUOuZw9Ko_YKTjDWSRnbBB', {action: 'contacto'}).then(function (token) {
-                document.getElementById('recaptchaToken').value = token;
-                document.getElementById("demo-form").submit();
+            if (incompletos.length > 0) {
+                errores.push("Por favor complete los siguientes campos obligatorios: " + incompletos.join(", ") + ".");
+            }
+
+            if (errores.length > 0) {
+                $("#errorModalBody").html(errores.map(e => `<div>${e}</div>`).join(""));
+                $("#errorModal").modal("show");
+                return;
+            }
+
+            // Ejecutar reCAPTCHA justo antes de enviar
+            grecaptcha.ready(function() {
+                grecaptcha.execute('6LcIosorAAAAADP5WzkUOuZw9Ko_YKTjDWSRnbBB', {
+                    action: 'contacto'
+                }).then(function(token) {
+                    document.getElementById('recaptchaToken').value = token;
+                    document.getElementById("demo-form").submit();
+                });
             });
         });
-    });
 
-    $("#demo-form input, #demo-form textarea").on("input", function () {
-        const campo = $(this);
-        if (campo.val().trim() !== "") {
-            campo.removeClass("campo-obligatorio");
-            campo.closest(".mb-3, .col").find("span.asterisco").css("opacity", "0").removeClass("animar-asterisco");
-        }
+        $("#demo-form input, #demo-form textarea").on("input", function() {
+            const campo = $(this);
+            if (campo.val().trim() !== "") {
+                campo.removeClass("campo-obligatorio");
+                campo.closest(".mb-3, .col").find("span.asterisco").css("opacity", "0").removeClass("animar-asterisco");
+            }
+        });
     });
-});
 </script>
+
 </html>

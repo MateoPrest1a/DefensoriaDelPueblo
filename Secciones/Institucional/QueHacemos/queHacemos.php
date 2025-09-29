@@ -3,10 +3,6 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/DefensoriaDelPueblo/parametros.php';
 include(HEADER);
 ?>
 
-<?php
-    include_once __DIR__ . '/../../../breadcrumbConfig.php';
-    include_once __DIR__ . '/../../../breadcrumb.php';
-?>
     <section class="que-hacemos-section d-flex align-items-center justify-content-center mt-3">
         <div class="container">
             <div class="row justify-content-center text-center">

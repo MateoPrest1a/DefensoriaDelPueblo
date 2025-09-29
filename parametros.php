@@ -1,7 +1,8 @@
 <?php 
+    //CAMBIAR URL AL SUBIR A UN SERVIDOR
     define('BASE_URL','http://localhost/DefensoriaDelPueblo/');
     
-
+    //CAMBIAR CREDENCIALES
     define("HOST","localhost");
     define("USER","root");
     define("PASS","");
@@ -11,8 +12,6 @@
     define("QUEHACEMOS","../Institucional/QueHacemos/queHacemos.php");
     define("CONTACTENOS","../Contactenos/FormContacto/contactenos.php");
     define("NOTICIAS","../Prensa/Noticias/noticias.php");
-
-
 
     define("URL_ORDENANZAS", BASE_URL . "Secciones/Normativa/Ordenanzas/");
     define("URL_RESOLUCION", BASE_URL . "Secciones/Normativa/Resolucion/");
@@ -30,6 +29,7 @@
     define("URL_LOGIN", BASE_URL . "Secciones/Login/login.php");
     define("URL_LOGOUT", BASE_URL . "Secciones/Login/logout.php");   
 
+    //AÑADIR BASE_URL A LAS RUTAS DE LOS INCLUDES
     define('HEADER', $_SERVER['DOCUMENT_ROOT'] . '/DefensoriaDelPueblo/plantilla/head.php');
     define("CONEXION", $_SERVER['DOCUMENT_ROOT'] . '/DefensoriaDelPueblo/Conexion/conexion.php');
     define("FOOTER", $_SERVER['DOCUMENT_ROOT'] . '/DefensoriaDelPueblo/plantilla/footer.php');    

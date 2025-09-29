@@ -1,4 +1,5 @@
 <?php
+//INCLUIR BASE_URL
 include_once $_SERVER['DOCUMENT_ROOT'] . '/DefensoriaDelPueblo/parametros.php';
 include(HEADER);
 include(CONEXION);

@@ -8,6 +8,7 @@ require 'PHPMailer-master/src/SMTP.php';
 
 include_once $_SERVER['DOCUMENT_ROOT'] . '/DefensoriaDelPueblo/parametros.php';
 include(HEADER);
+include(CONEXION);
 
 mysqli_select_db($link, DB);
 

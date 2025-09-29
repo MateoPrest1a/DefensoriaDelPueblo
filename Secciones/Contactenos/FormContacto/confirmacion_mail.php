@@ -7,6 +7,7 @@ require 'PHPMailer-master/src/PHPMailer.php';
 require 'PHPMailer-master/src/SMTP.php';
 
 include_once $_SERVER['DOCUMENT_ROOT'] . '/DefensoriaDelPueblo/parametros.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/DefensoriaDelPueblo/Conexion/conexion.php';
 include(HEADER);
 
 mysqli_select_db($link, DB);

@@ -21,7 +21,7 @@ function validar_email($email) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validación reCAPTCHA v3
-    $recaptchaSecret = '6LcIosorAAAAANcR02IjKQWGweGKUE1v6MKWGqTd';
+    $recaptchaSecret = 'TU_CODIGO_SECRETO_RECAPTCHA';
     $token = $_POST['recaptcha_token'] ?? '';
 
     $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$recaptchaSecret}&response={$token}");
@@ -67,13 +67,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->isSMTP();
             $mail->Host = 'smtp.gmail.com';
             $mail->SMTPAuth = true;
-            $mail->Username = 'highlet.sample@gmail.com';
-            $mail->Password = 'qdzw sbyt awmx oknm'; // Usá una contraseña segura o App Password
+            $mail->Username = 'EMAIL_CON_CLAVE_SECRETA';
+            $mail->Password = ''; // Usá una contraseña segura o App Password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = 587;
             $mail->CharSet = 'UTF-8';
 
-            $mail->setFrom('highlet.sample@gmail.com', 'Defensoría del Pueblo');
+            $mail->setFrom('MAIL_DESDE_DONDE_SE_ENVIA', 'Defensoría del Pueblo');
             $mail->addAddress($email);
             $mail->Subject = 'Confirmación de contacto';
             $mail->Body = "Hola " . htmlspecialchars($nombre) . " " . htmlspecialchars($apellido) . ",\n\nTu mensaje ha sido recibido con éxito. En menos de 72 horas hábiles recibirás una respuesta.\n\nSaludos cordiales,\nDefensoría del Pueblo.";

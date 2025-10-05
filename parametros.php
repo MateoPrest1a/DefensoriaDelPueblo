@@ -4,9 +4,9 @@
     
     //CAMBIAR CREDENCIALES
     define("HOST","localhost");
-    define("USER","root");
+    define("USER","TU_USUARIO_LOCAL");
     define("PASS","");
-    define("DB","defensoria");
+    define("DB","TU_BASE_DE_DATOS");
 
     define("TITULO","Defensoria del Pueblo");
     define("QUEHACEMOS","../Institucional/QueHacemos/queHacemos.php");
